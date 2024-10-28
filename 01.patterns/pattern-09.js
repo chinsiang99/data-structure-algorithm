@@ -59,3 +59,5 @@ for(let i = 0; i < n; i++){
 
     console.log(spaces + stars + spaces)
 }
+
+// note that we are not viewing this as symmetric because basically there is no difference, it is up side down, hence we can just use two for loops to do it..
