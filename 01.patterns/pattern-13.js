@@ -5,11 +5,6 @@
 // 7 8 9 10
 // 11 12 13 14 15
 
-// 1      1
-// 12    21
-// 123  321
-// 12344321
-
 // we can observe it as numbers, spaces, numbers also
 // [1, 6, 1] the numbers basically is same as row = 1, the space can be 4 * 2 - 2* i
 // [2, 4, 2] 
