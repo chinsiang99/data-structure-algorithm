@@ -18,6 +18,8 @@ function method(n){
 console.log(method(n))
 console.log(method(32))
 
+// note that this has a time complexity of n
+
 // we can now observe something here
 // if we look closely
 // we can see that 
@@ -46,8 +48,16 @@ function method2(n){
         }
     }
     return Array.from(newSet).sort((a, b) => a - b);
+    // sorting has nlogn complexity, since the n is sqrt,
+    // so it would be sqrtn logsqrtn
 }
 
 
 console.log(method2(36))
 console.log(method2(32))
+
+// note that the performance has been improved because the time complexity is now sqrt(n) in case for the for loops, and having a sqrtn logsqrtn
+// so it is sqrtn + sqrtnlogsrtn
+// == sqrtn (1 + logsqrtn)
+// since we only see the bigger ones, so the time complexity would be sqrtnlogsqrtn
+// note that if we didnt do the sorting, it will be way faster, which is sqrtn if we only console log directly
