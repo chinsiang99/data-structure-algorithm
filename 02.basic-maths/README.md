@@ -80,3 +80,4 @@ function countDigits(n) {
 // Example
 const number = 12345;
 console.log(`The number ${number} has ${countDigits(number)} digits.`);
+```
