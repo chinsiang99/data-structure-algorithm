@@ -22,3 +22,8 @@ function method2(n){
 }
 
 console.log(method2(n))
+
+// now we will discuss the time complexity of it,
+// it should be O(log10(n))
+// because it is divisibled by 10
+// if it is being divisible by 2, then it would be log2(n)
