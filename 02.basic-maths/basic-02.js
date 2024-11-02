@@ -12,3 +12,5 @@ function method(n){
 }
 
 console.log(method(n))
+
+// note that the time complexity is actually log base 10 n

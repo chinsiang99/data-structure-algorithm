@@ -22,3 +22,5 @@ function method(n){
 console.log(method(n))
 console.log(method(n1))
 console.log(method(n2))
+
+// note that the time complexity is actually log base 10 n

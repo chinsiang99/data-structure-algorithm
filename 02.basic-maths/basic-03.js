@@ -19,3 +19,5 @@ console.log(method(n))
 console.log(method(n2))
 console.log(method(n3))
 console.log(method(n4))
+
+// note that the time complexity is actually log base 10 n
