@@ -40,7 +40,9 @@ console.log(method(32))
 function method2(n){
     // let valuesReturned = "1"
     let newSet = new Set()
-    for(let i = 1; i <= Math.sqrt(n); i++){
+    // for(let i = 1; i <= Math.sqrt(n); i++){
+    // we can do below logic as well
+    for(let i = 1; i*i <= n; i++){
         if(n % i === 0){
             let oppositeValue = n / i
             newSet.add(i)
