@@ -8,7 +8,7 @@
 let n = 5
 // problem 1...
 function problem1(n){
-    if(i == 0){
+    if(n == 0){
         return
     }
     return problem1(n-1)
