@@ -5,6 +5,7 @@
 // 4. print from 1 to n (but with backtrack)
 // 4. print from n to 1 (but with backtrack)
 
+let n = 5
 // problem 1...
 function problem1(n){
     if(i == 0){
@@ -17,7 +18,6 @@ function problem1(n){
 problem1(n)
 
 // problem 2...
-let n = 5
 function problem2(i, n){
     if(i > n){
         return
