@@ -53,3 +53,17 @@ console.log(problem2a(string, 0, string.length - 1))
 console.log(problem2a(string1, 0, string1.length - 1))
 console.log(problem2a(string2, 0, string2.length - 1))
 console.log(problem2a(string3, 0, string3.length - 1))
+
+
+function problem2b(i){
+    if(i >= string.length / 2){
+        return true
+    }
+    if(string[i] !== string[string.length - 1 - i]){
+        return false
+    }
+    return problem2b(i + 1)
+}
+
+console.log(problem2b(0))
+console.log(problem2b(0))
