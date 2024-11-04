@@ -26,3 +26,27 @@ function problem1b(n){
 
 console.log(problem1b(n))
 
+// problem 2 => factorial
+console.log("problem 2a here...")
+function problem2a(n, result){
+    if(n === 1){
+        return result
+    }
+
+    return problem2a(n-1, result * n)
+}
+
+console.log(problem2a(n, 1))
+
+// problem 2b
+console.log("problem 2b here...")
+function problem2b(n){
+    if(n === 0){
+        return 1
+    }
+
+    return n * problem2b(n-1)
+}
+
+console.log(problem2b(n))
+
