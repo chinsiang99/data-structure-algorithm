@@ -8,4 +8,5 @@ function problem1a(n, sum){
     problem1a(n-1, sum + n)
 }
 
+// time complexity is O(n), space complexity is O(n)
 problem1a(n, 0)
