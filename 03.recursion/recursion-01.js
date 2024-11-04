@@ -7,6 +7,7 @@
 
 let n = 5
 // problem 1...
+console.log("problem 1 start here ...")
 function problem1(n){
     if(n == 0){
         return
@@ -19,6 +20,7 @@ function problem1(n){
 problem1(n)
 
 // problem 2...
+console.log("problem 2 start here ...")
 function problem2(i, n){
     if(i > n){
         return
@@ -29,3 +31,15 @@ function problem2(i, n){
 
 // note that this is having time complexity of O(n) and space complexity of O(n), becuas eit consumes n stack space
 problem2(1, 5)
+
+// problem 3
+console.log("problem 3 start here ...")
+function problem3(i, n){
+    if(n < i){
+        return
+    }
+    console.log(n)
+    return problem3(i, n-1)
+}
+
+problem3(2, 5)
