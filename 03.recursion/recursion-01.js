@@ -3,7 +3,7 @@
 // 2. print from 1 to n
 // 3. print from n to 1
 // 4. print from 1 to n (but with backtrack)
-// 4. print from n to 1 (but with backtrack)
+// 5. print from n to 1 (but with backtrack)
 
 let n = 5
 // problem 1...
@@ -43,3 +43,15 @@ function problem3(i, n){
 }
 
 problem3(2, 5)
+
+// problem 4...
+console.log("problem 4 start here ...")
+function problem4(i, n){
+    if(i < 1){
+        return
+    }
+    problem4(i - 1, n)
+    console.log(i)
+}
+
+problem4(5, 5)
