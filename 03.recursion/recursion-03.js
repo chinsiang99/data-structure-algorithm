@@ -36,6 +36,8 @@ console.log(array2)
 
 let string = "hello"
 let string1 = 'iei'
+let string2 = 'madam'
+let string3 = '11211'
 // problem 2, check whether a string is palindrome
 function problem2a(string, first, last){
     if(first >= last){
@@ -49,3 +51,5 @@ function problem2a(string, first, last){
 
 console.log(problem2a(string, 0, string.length - 1))
 console.log(problem2a(string1, 0, string1.length - 1))
+console.log(problem2a(string2, 0, string2.length - 1))
+console.log(problem2a(string3, 0, string3.length - 1))
