@@ -55,3 +55,15 @@ function problem4(i, n){
 }
 
 problem4(5, 5)
+
+// problem 5...
+console.log("problem 5 start here")
+function problem5(i, n){
+    if(i > n){
+        return
+    }
+    problem5(i+1, n)
+    console.log(i)
+}
+
+problem5(1, 5)
