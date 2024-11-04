@@ -11,6 +11,7 @@ function problem1(n){
     if(n == 0){
         return
     }
+    console.log("name")
     return problem1(n-1)
 }
 
@@ -23,7 +24,7 @@ function problem2(i, n){
         return
     }
     console.log(i)
-    return problem1(i+1, n)
+    return problem2(i+1, n)
 }
 
 // note that this is having time complexity of O(n) and space complexity of O(n), becuas eit consumes n stack space
