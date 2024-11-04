@@ -6,8 +6,19 @@
 // 4. print from n to 1 (but with backtrack)
 
 // problem 1...
+function problem1(n){
+    if(i == 0){
+        return
+    }
+    return problem1(n-1)
+}
+
+// note that this is having time complexity of O(n) and space complexity of O(n), becuas eit consumes n stack space
+problem1(n)
+
+// problem 2...
 let n = 5
-function problem1(i, n){
+function problem2(i, n){
     if(i > n){
         return
     }
@@ -15,4 +26,5 @@ function problem1(i, n){
     return problem1(i+1, n)
 }
 
-problem1(1, 5)
+// note that this is having time complexity of O(n) and space complexity of O(n), becuas eit consumes n stack space
+problem2(1, 5)
