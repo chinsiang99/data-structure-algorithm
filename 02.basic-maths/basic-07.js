@@ -59,19 +59,27 @@ console.log(method3(a, b))
 
 // for this euclidean algorithm, actually have different usage
 function method4(a, b){
-    let returnValue
+    // let returnValue
     while(a > 0 && b > 0){
-        let newValue = Math.abs(a - b)
-        if(newValue === 0){
-            returnValue = Math.min(a, b)
-        }
-        if(a >= b){
-            a = newValue
+        // let newValue = Math.abs(a - b)
+        // if(newValue === 0){
+        //     returnValue = Math.min(a, b)
+        // }
+        // if(a >= b){
+        //     a = newValue
+        // }else{
+        //     b = newValue
+        // }
+        // we have a better way here
+        if(a > b){
+            a = a % b
         }else{
-            b = newValue
+            b = b % a
         }
     }
-    return returnValue
+    // return returnValue
+    console.log("hello finished", a, b)
+    return Math.max(a, b)
 }
 
 console.log(method4(a, b))
