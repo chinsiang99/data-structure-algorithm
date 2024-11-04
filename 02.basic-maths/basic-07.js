@@ -56,3 +56,24 @@ function method3(a, b){
 }
 
 console.log(method3(a, b))
+
+// for this euclidean algorithm, actually have different usage
+function method4(a, b){
+    let returnValue
+    while(a > 0 && b > 0){
+        let newValue = Math.abs(a - b)
+        if(newValue === 0){
+            returnValue = Math.min(a, b)
+        }
+        if(a >= b){
+            a = newValue
+        }else{
+            b = newValue
+        }
+    }
+    return returnValue
+}
+
+console.log(method4(a, b))
+
+// note that the time complexity will be around O(log(min(a, b)))
