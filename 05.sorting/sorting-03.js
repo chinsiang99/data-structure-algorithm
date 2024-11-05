@@ -32,3 +32,17 @@ insertionSortDesc(newArray)
 console.log(newArray)
 
 // time complexity will be O(n)
+
+// this is the best one because the best case is simply O(n)
+function insertionSortBest(arr){
+    for(let i = 1; i < arr.length; i++){
+        let j = i
+        while(j >=0 && arr[j - 1] > arr[j]){
+            [arr[j], arr[j-1]] = [arr[j-1], arr[j]]
+            j--
+        }
+    }
+}
+
+insertionSortBest(newArray)
+console.log(newArray)
