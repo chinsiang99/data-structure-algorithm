@@ -30,3 +30,5 @@ function insertionSortDesc(arr){
 
 insertionSortDesc(newArray)
 console.log(newArray)
+
+// time complexity will be O(n)
