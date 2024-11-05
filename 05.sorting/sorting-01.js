@@ -41,3 +41,5 @@ function selectionSortDescending(arr){
 selectionSortDescending(newArray)
 
 console.log(newArray)
+
+// both time complexity is O(n)
