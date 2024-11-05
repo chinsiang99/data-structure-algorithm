@@ -26,3 +26,5 @@ function bubbleSortDesc(arr){
 
 bubbleSortDesc(newArray)
 console.log(newArray)
+
+// both time complexity is O(n^2)
