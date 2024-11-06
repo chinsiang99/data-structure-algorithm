@@ -62,3 +62,53 @@ sortAsc(arrayNumbers2, 0, arrayNumbers2.length - 1)
 console.log(arrayNumbers)
 console.log(arrayNumbers2)
 
+function sortDesc(arr, low, high){
+    if(low === high){
+        return
+    }
+
+    let middle = Math.floor((low + high) / 2)
+
+    sortDesc(arr, low, middle)
+    sortDesc(arr, middle+1, high)
+
+    mergeDesc(arr, low, middle, high)
+}
+
+function mergeDesc(arr, low, mid, high){
+    let temporaryArray = []
+    let rightFirstIndex = mid + 1
+    let leftFirstIndex = low
+
+    while(leftFirstIndex <= mid && rightFirstIndex <= high){
+        if(arr[leftFirstIndex] >= arr[rightFirstIndex]){
+            temporaryArray.push(arr[leftFirstIndex])
+            leftFirstIndex++
+        }else{
+            temporaryArray.push(arr[rightFirstIndex])
+            rightFirstIndex++
+        }
+    }
+
+    while(leftFirstIndex <= mid){
+        temporaryArray.push(arr[leftFirstIndex])
+        leftFirstIndex++
+    }
+
+    while(rightFirstIndex <= high){
+        temporaryArray.push(arr[rightFirstIndex])
+        rightFirstIndex++
+    }
+
+    for(let i = low; i <= high; i++){
+        arr[i] = temporaryArray[i - low]
+    }
+}
+
+
+sortDesc(arrayNumbers, 0, arrayNumbers.length - 1)
+sortDesc(arrayNumbers2, 0, arrayNumbers2.length - 1)
+
+console.log(arrayNumbers)
+console.log(arrayNumbers2)
+
