@@ -5,6 +5,7 @@ let isSorted = true
 for(let i = 0; i < arrayNumbers.length - 1; i++){
     if(arrayNumbers[i] > arrayNumbers[i + 1]){
         isSorted = false
+        break;
     }
 }
 console.log(isSorted)
@@ -15,6 +16,7 @@ let isSorted2 = true
 for(let i = 0; i < arrayNumbers2.length - 1; i++){
     if(arrayNumbers2[i] > arrayNumbers2[i + 1]){
         isSorted2 = false
+        break;
     }
 }
 console.log(isSorted2)
