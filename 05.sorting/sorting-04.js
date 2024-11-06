@@ -138,3 +138,5 @@ console.log(arrayNumbers2)
 // At each level, we merge n elements across the subarrays.
 // Since we perform merging at each of the log(n) levels, and each level involves O(n) work, 
 // the total time complexity is O(n log n).
+
+// space complexity is O(n)
