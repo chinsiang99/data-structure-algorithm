@@ -12,3 +12,19 @@ for(let i = arrayNumbers.length - 2; i >=0; i--){
     }
 }
 
+// better approach (time complexity n + n)
+let arrayNumbers2 = [1, 2, 3, 3, 2, 5, 6, 3, 8, 3, 5]
+let largest = -1
+for(let i = 0; i < arrayNumbers2.length - 1; i++){
+    if(arrayNumbers2[i] > largest){
+        largest = arrayNumbers2[i]
+    }
+}
+let secondLargest = -1
+for(let i = 0; i < arrayNumbers2.length - 1; i++){
+    if(arrayNumbers2[i] > secondLargest && arrayNumbers2[i] < largest){
+        secondLargest = arrayNumbers2[i]
+    }
+}
+
+console.log(secondLargest)
