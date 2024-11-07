@@ -27,6 +27,9 @@ function leftRotateByNPlaces(arr, n){
     }
 }
 
+// the time complexity is actually O(n)
+// the space complexity is actually O(realRotateValue)
+
 console.log("original", arrayNumbers2)
 leftRotateByNPlaces(arrayNumbers2, 2)
 console.log("rotated", arrayNumbers2)
