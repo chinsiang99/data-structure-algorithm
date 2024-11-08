@@ -27,3 +27,24 @@ function intersection(arr1, arr2){
 
 // note that the time complexity is actually n1 + n2 , space complexity is actually larger of n1, n2, and a intersect
 console.log(intersection(arr1, arr2))
+
+// two pointer
+function intersectionOptimal(arr1, arr2){
+    let i = 0
+    let j = 0
+    let intersect = []
+    while(i < arr1.length && j < arr2.length){
+        if(arr1[i] === arr2[j]){
+            intersect.push(arr1[i])
+            i++;
+            j++
+        }else if(arr1[i] < arr2[j]){
+            i++
+        }else{
+            j++
+        }
+    }
+    return intersect
+}
+
+console.log(intersectionOptimal(arr1, arr2))
