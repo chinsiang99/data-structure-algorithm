@@ -47,3 +47,17 @@ function findMissingNumber2(arr){
 }
 
 console.log(findMissingNumber2(array))
+
+
+let arrayL = [1, 3, 4, 5]
+function findMissingNUmber3(arr, n){
+    let sum = n * (n + 1) / 2
+    for(let i = 0; i < arr.length; i++){
+        sum = sum - arrayL[i]
+    }
+    return sum
+}
+// note that this is way better if the pattern is like that, we can utilize the algotithm to get it
+
+console.log(findMissingNUmber3(arrayL, 5))
+
