@@ -29,4 +29,5 @@ function bruteForce(arr, k){
     return maximumCount
 }
 
+// time complexity is O(n^2)
 console.log(bruteForce(array, 3))
