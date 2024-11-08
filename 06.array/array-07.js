@@ -18,3 +18,25 @@ for(let i = 0; i < arrayNumbers.length; i++){
 
 // the time complexity is O(2n), space complexity is O(n)
 console.log(arrayNumbers)
+
+// two pointer approach - a betterway to solve this
+let arrayNumbers2 = [0, 1, 2, 3, 0, 4, 5, 0, 0, 6, 7, 8, 0, 0, 9]
+let zeroIndex = -1
+for(let i = 0; i < arrayNumbers2.length; i++){
+    if(arrayNumbers2[i] === 0){
+        zeroIndex = i
+        break;
+    }
+}
+
+if(zeroIndex === -1) console.log("yo")
+
+for(let i = zeroIndex + 1; i < arrayNumbers2.length; i++){
+    if(arrayNumbers2[i] !== 0){
+        [arrayNumbers2[i], arrayNumbers2[zeroIndex]] = [arrayNumbers2[zeroIndex], arrayNumbers2[i]]
+        zeroIndex++
+    }
+}
+
+// this has a time complexity og O(n)
+console.log(arrayNumbers2)
