@@ -25,4 +25,5 @@ function intersection(arr1, arr2){
     return intersect
 }
 
+// note that the time complexity is actually n1 + n2 , space complexity is actually larger of n1, n2, and a intersect
 console.log(intersection(arr1, arr2))
