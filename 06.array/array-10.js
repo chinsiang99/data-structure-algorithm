@@ -46,5 +46,5 @@ function intersectionOptimal(arr1, arr2){
     }
     return intersect
 }
-
+// time complexity is actually n1 + n2, without additional time complexity although as an intersect
 console.log(intersectionOptimal(arr1, arr2))
