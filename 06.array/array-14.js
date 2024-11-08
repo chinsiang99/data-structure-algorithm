@@ -31,3 +31,28 @@ function bruteForce(arr, k){
 
 // time complexity is O(n^2)
 console.log(bruteForce(array, 3))
+
+
+function mapping(arr, k){
+    let map = new Map()
+    let cumulativeSum = 0
+    let maxLength = 0
+    for(let i = 0; i < arr.length; i++){
+        cumulativeSum = cumulativeSum + arr[i]
+        if(cumulativeSum === k){
+            maxLength = i + 1
+        }
+        if(map.has(cumulativeSum - k)){
+            // console.log("hello", map.get(cumulativeSum - k))
+            maxLength = Math.max(maxLength, i - map.get(cumulativeSum - k))
+        }
+        if(!map.has(cumulativeSum)){
+            map.set(cumulativeSum, i)
+        }
+    }
+    // console.log(map)
+    return maxLength
+}
+
+// time complexity is O(n)
+console.log(mapping(array, 3))
