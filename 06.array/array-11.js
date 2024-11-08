@@ -61,3 +61,23 @@ function findMissingNUmber3(arr, n){
 
 console.log(findMissingNUmber3(arrayL, 5))
 
+// now we will see another awesome approach which is using XOR
+
+// remember that XOR mechanism is like 1 ^ 1 = 0 , 1 ^ 1 ^ 1 = 1, 2 ^ 2 = 0, 2 ^ 2 ^ 2 = 2
+
+// this is better because we know thattere is a limit we can store inside a number, if we use the previous method, it has a higher sum, even out of bounds....
+
+function findMissingNumberXOR(arrayL, n){
+    let xor1 = 0
+    let xor2 = 0
+    for(let i = 0; i < n - 1; i++){
+        xor1 = xor1 ^ arrayL[i]
+        xor2 = xor2 ^ (i+1)
+    }
+    xor2 = xor2 ^ n
+
+    let missingNumber = xor1 ^ xor2
+    return missingNumber
+}
+
+console.log(findMissingNumberXOR(arrayL, 5))
