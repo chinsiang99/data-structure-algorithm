@@ -32,6 +32,7 @@ function bruteForce(arr, k){
 // time complexity is O(n^2)
 console.log(bruteForce(array, 3))
 
+array = [0, 1, -1, 2, 3, -2, 3, 0, 4];
 
 function mapping(arr, k){
     let map = new Map()
