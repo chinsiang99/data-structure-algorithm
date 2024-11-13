@@ -13,4 +13,5 @@ function twoSum(arr, target){
     return false
 }
 
+// note that the time complexity for this is actually O(n), the space complexity is also O(n) because we havea set data structure
 console.log(twoSum(array, target))
