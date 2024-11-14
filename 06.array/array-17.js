@@ -21,5 +21,5 @@ function majority(arr){
     }
     return valueTobeReturned
 }
-
+// the time complexity is O(n), the space complexity is O(n)
 console.log(majority(array))
