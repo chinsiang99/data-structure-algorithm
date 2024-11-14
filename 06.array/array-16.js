@@ -24,3 +24,41 @@ function sorting(arr){
 // time complexity is actually O(n) + O(n) which can consider O(n), space complexity wise, we are using a new Map(), which is actually a constant i would say, because we are having 0, 1, 2, it wont change, and for the return array, it would be size of array, which is O(n)
 console.log(sorting(array))
 
+// we can have a best solution out of this...
+// lets say we already knew that there is only three kind of numbers, which is actually 0, 1, 2, we can view it as 4 sections...
+// so we can actually say that 
+// 0 to low - 1 is actually 0
+// low to mid - 1 is actually 1
+// high+1 to n - 1 is actually 2
+// example visualization
+// it is like 0...low - 1, low...mid - 1, mid...high, high + 1 ... n - 1
+// the idea is that we can see the array as mid ... high
+// so we here mid is actually low also,
+// if we want arr[mid] is sorted, if it is 0, we need to take the low and swap it, so it can be ordered
+// after swapping mid = mid + 1, low = low + 1
+// if arr[mid] is 1, we do not need to swap anything, but we need to mid = mid + 1
+// if arr[mid] is 2, we will swap arr[mid] with arr[high], then mid = mid + 1, high = high - 1
+
+let array2 = [1, 0, 2, 1, 0, 1, 2, 2, 1, 0, 0]
+function threePointerSolution(arr){
+    let low = 0
+    let mid = 0
+    let high = arr.length - 1
+
+    while (mid <= high) {
+        if (arr[mid] === 0) {
+            [arr[mid], arr[low]] = [arr[low], arr[mid]];
+            low++;
+            mid++;
+        } else if (arr[mid] === 1) {
+            mid++;
+        } else if (arr[mid] === 2) {
+            [arr[mid], arr[high]] = [arr[high], arr[mid]];
+            high--;  // Only decrement high here, do not increment mid
+        }
+    }
+}
+
+// note that the time complexity of this approach has a O(n), and space complexity of O(1)
+threePointerSolution(array2)
+console.log(array2)
