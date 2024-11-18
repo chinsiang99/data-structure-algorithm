@@ -25,6 +25,8 @@ function method1(arr){
 
     return finalArray
 }
+
+// note that this method has a time complexity of O(2n), and a O(2n) of space complexity
 console.log(method1(array))
 
 function method2(arr){
@@ -51,4 +53,5 @@ function method2(arr){
 
 method2(array)
 
+// note that this metod has a time complexity of O(n) and O(1) of space complexity
 console.log(array)
