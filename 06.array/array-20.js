@@ -26,3 +26,29 @@ function method1(arr){
     return finalArray
 }
 console.log(method1(array))
+
+function method2(arr){
+    let positive = 0
+    let negative = 1
+
+    while(positive < arr.length && negative < arr.length){
+        // find the first missmatch for positive number
+        while(positive < arr.length && arr[positive] > 0){
+            positive += 2
+        }
+
+        // find the first missmatch for negative number
+        while(negative < arr.length && arr[negative] < 0){
+            negative += 2
+        }
+
+        // Swap the mismatched elements (only if valid indices)
+        if (positive < arr.length && negative < arr.length) {
+            [arr[positive], arr[negative]] = [arr[negative], arr[positive]];
+        }
+    }
+}
+
+method2(array)
+
+console.log(array)
