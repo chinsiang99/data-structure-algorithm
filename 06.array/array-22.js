@@ -29,3 +29,20 @@ function method(arr){
 
 // not that this method has a time compelxity of O(n^2), space complexity of O(n)
 console.log(method(array))
+
+// in this method, we are actually utilizing another thinking, instead of thinking fromt start, we can think from behind
+// if we count it on behind, we can say that if it is larger than the previous maximum, we can view it as a leader as well
+function method2(arr){
+    let maximum = Number.MIN_SAFE_INTEGER
+    let output = []
+    for(let i = arr.length - 1; i >=0; i--){
+        if(arr[i] > maximum){
+            maximum = arr[i]
+            output.push(maximum)
+        }
+    }
+
+    return output
+}
+// note that the time complexity is being reduced to O(n) instead of O(n^2)
+console.log(method2(array))
