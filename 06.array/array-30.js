@@ -43,3 +43,35 @@ function method2(arr, target){
 }
 // time complexity is O(n^2)
 console.log(method2(arr, target))
+
+function method3(arr, target){
+    arr.sort((a,b)=>a-b)
+    console.log(arr, "this is array")
+    let answer= []
+    for(let i = 0; i < arr.length; i++){
+        if(i > 0 && arr[i] === arr[i - 1]){
+            continue;
+        }
+        let j = i + 1
+        let k = arr.length - 1
+        while(j < k){
+            if(arr[i] + arr[j] + arr[k] === target){
+                answer.push([arr[i], arr[j], arr[k]])
+                j++
+                k--
+                while(arr[j] === arr[j-1]) j++
+                while(arr[k] === arr[k+1]) k--
+            }else if(arr[i] + arr[j] + arr[k] < target){
+                j++
+            }else{
+                k--
+            }
+        }
+    }
+
+    return answer
+}
+
+// the optimal approach would be sorting the array first with 2 pointer approach
+// time complexity will be O(n^2) and space complexity will be only the return answer, which is O(n)
+console.log(method3(arr, target))
