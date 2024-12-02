@@ -26,3 +26,27 @@ function method(arr, target){
 
 // time complexity is O(n^2), space complexity constant
 console.log(method(arr, k))
+
+// we need to visualize that x ^ k = xr
+// therefore we in order to find the x, we need to both xor k
+// meaning that xr ^ k
+function method2(arr, k){
+    let map = new Map([[0, 1]])
+    let count = 0
+    let xor = 0
+    for(let i = 0; i < arr.length; i++){
+        xor = xor ^ arr[i]
+
+        let x = xor ^ k
+        
+        if(map.has(x)){
+            count = count + map.get(x)
+        }
+
+        map.set(xor, (map.get(xor) || 0) + 1);
+    }
+
+    return count
+}
+
+console.log(method2(arr, k))
