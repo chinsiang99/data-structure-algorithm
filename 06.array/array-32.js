@@ -48,5 +48,5 @@ function method2(arr, k){
 
     return count
 }
-
+// time complexity is  O(n), space complexity is O(n)
 console.log(method2(arr, k))
