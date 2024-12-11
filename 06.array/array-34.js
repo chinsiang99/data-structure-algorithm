@@ -45,3 +45,29 @@ function method(arr, arr2){
 }
 // time complexity would be O(2n) + O(2m), space complexity would be O(n) space
 console.log(method(arr, arr2))
+
+arr = [1, 3, 5, 7]
+arr2 = [0, 2, 6, 8, 9]
+
+function method2(arr, arr2){
+
+    let left = arr.length - 1
+    let right = 0
+    while(left >= 0 && right < arr2.length){
+        if(arr[left] > arr2[right]){
+            [arr[left], arr2[right]] = [arr2[right], arr[left]]
+            left--
+            right++
+        }else{
+            break;
+        }
+    }
+
+    arr.sort((a, b)=>a-b)
+    arr2.sort((a, b)=>a-b)
+
+    return [arr, arr2]
+}
+
+// time complexity for this is actually including the sorting which is O(n log n) + O(m log m), space complexity is O(n) space
+console.log(method2(arr, arr2))
