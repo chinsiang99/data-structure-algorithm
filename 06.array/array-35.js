@@ -59,3 +59,31 @@ function method2(arr, n){
 
 // time complexity is O(n), space complexity is O(n)
 console.log(method2(arr, n))
+
+// using maths to solve the problem
+function method3(arr, n){
+    // we need to build up two equation
+    // S - SN = x - y
+    // S2 - S2N = 
+
+    // need to memorize the solution, because it is maths
+    let SN = (n * (n + 1)) / 2
+    let S2N = (n * (n+1) * (2 * n + 1)) / 6
+    let S = 0
+    let S2 = 0
+    for(let i = 0; i < n; i++){
+        S += arr[i]
+        S2 += arr[i] * arr[i]
+    }
+
+    let firstValue = S - SN // x - y
+    let secondValue = S2 - S2N
+    secondValue = secondValue / firstValue // x + y
+
+    let x = (firstValue + secondValue) / 2
+    let y = x - firstValue
+
+    return [x, y]
+}
+
+console.log(method3(arr, n))
