@@ -71,3 +71,32 @@ function method2(arr, arr2){
 
 // time complexity for this is actually including the sorting which is O(n log n) + O(m log m), space complexity is O(n) space
 console.log(method2(arr, arr2))
+
+// gap method
+// it is a sorting technique which is shell sort
+
+
+arr = [1, 3, 5, 7]
+arr2 = [0, 2, 6, 8, 9]
+function method3(arr, arr2){
+    let gap = Math.ceil((arr.length + arr2.length) / 2)
+    while(gap > 0){
+        let leftIndex = 0
+        let rightIndex = leftIndex + gap
+        // let leftIndex = 0
+
+        while(rightIndex < arr2.length){
+            let leftValue = leftIndex < arr.length ? arr[leftIndex] : arr2[leftIndex - arr.length]
+            let rightValue = rightIndex < arr.length ? arr[rightIndex] : arr2[rightIndex - arr.length]
+        }
+
+
+        // while(rightIndex <= arr2.length - 1){
+        //     // if(leftIndex < arr.length - 1 && rightIndex >= arr.length - 1){
+        //     //     if(arr[leftIndex])
+        //     // }
+        // }
+    }
+}
+
+console.log(method3(arr, arr2))
