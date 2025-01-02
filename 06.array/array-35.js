@@ -64,11 +64,11 @@ console.log(method2(arr, n))
 function method3(arr, n){
     // we need to build up two equation
     // S - SN = x - y
-    // S2 - S2N = 
+    // S2 - S2N = x^2 - y^2 = (x-y)(x+y)
 
     // need to memorize the solution, because it is maths
     let SN = (n * (n + 1)) / 2
-    let S2N = (n * (n+1) * (2 * n + 1)) / 6
+    let S2N = (n * (n +1 ) * (2 * n + 1)) / 6
     let S = 0
     let S2 = 0
     for(let i = 0; i < n; i++){
@@ -86,4 +86,62 @@ function method3(arr, n){
     return [x, y]
 }
 
+// time complexity is O(n), space complexity is O(1)
 console.log(method3(arr, n))
+
+// this is very advanced and needed to be revised man and it is super efficient, please do some revision on this !!!!!
+function method4(arr, n){
+    let totalXOR = 0
+
+    for(let i = 1; i <= n; i++){
+        totalXOR ^= arr[i - 1]
+        totalXOR ^= i
+    }
+
+    // now we will try to get the difference rightmost bit set to 1, so that we could split them
+    // we use the difference is because we already know that there will be left two value, one is missing, one is repeating, in the totalXOR, we know that it is actually the repeating ^ missing one, therefore we can assume that the rightmost set bit is actually the difference between them, so we can divide them into groups and try to make it
+    let rightMostSetBit = totalXOR & -totalXOR
+
+    // initiate, because we knew that we have two variable, one repeating, one missing
+    let x = 0, y = 0
+    // for(let num of arr){
+    //     if(rightMostSetBit & num){
+    //         x ^= num
+    //     }else{
+    //         y ^= num
+    //     }
+    // }
+
+    for(let i = 1; i <= n; i++){
+        if(rightMostSetBit & arr[i-1]){
+            x ^= arr[i-1]
+        }else{
+            y ^= arr[i-1]
+        }
+
+        if(rightMostSetBit & i){
+            x ^= i
+        }else{
+            y ^= i
+        }
+    }
+
+    // before returning, we need to verify it whether it is the repeating or the missing
+
+    let missing = true
+    for(let i = 0; i < n; i++){
+        if(arr[i] === x){
+            missing = false
+            break;
+        }
+    }
+
+    if(missing){
+        return [y, x]
+    }else{
+        return [x, y]
+    }
+}
+
+// time complexity is O(n = n + n), space complexity is O(1)
+console.log(method4(arr, n))
