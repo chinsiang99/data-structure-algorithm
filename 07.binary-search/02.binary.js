@@ -1,8 +1,8 @@
 // problem: implement lower bound
-// the smallest index such that the number of that index is greater than or equal to given number
+// the smallest index such that the number of that index is greater than or equal to given number, arr[i] >= target
 
-let arr = [3, 5, 8, 15, 19]
-let target = 4
+let arr = [3, 5, 5, 8, 15, 19]
+let target = 15
 
 function method1(arr, target){
     let answer = arr.length
@@ -19,7 +19,7 @@ function method1(arr, target){
 // time complexity is O(n)
 console.log(method1(arr, target))
 
-target = 20
+// target = 20
 function method2(arr, target){
 
     let low = 0
@@ -38,7 +38,28 @@ function method2(arr, target){
 
     return answer
 }
-
-// time complexity is O(n)
+// time complexity is O(logn)
 console.log(method2(arr, target))
 
+
+
+// problem upper bound, which is the opposite of previous problem, arr[i] > target
+function method3(arr, target){
+    let answer = -1
+    let low = 0
+    let high = arr.length - 1
+
+    while(low <= high){
+        let mid = Math.floor((low + high) / 2)
+        if(arr[mid] > target){
+            answer = mid
+            high = mid - 1
+        }else{
+            low = mid + 1
+        }
+    }
+
+    return answer
+}
+
+console.log(method3(arr, target))
