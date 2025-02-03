@@ -40,5 +40,5 @@ function method2(arr){
     return answer
 }
 
-// time complexity is O(logn)
+// time complexity is O(logn )
 console.log(method2(arr))
