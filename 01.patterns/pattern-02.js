@@ -13,3 +13,15 @@ for(let i = 0; i < n; i++){
     }
     console.log(row)
 }
+
+console.log("--- revision starts here ---")
+
+let k = 5
+for(let i = 0; i < k; i++){
+    let row = ""
+    for(let j = 0; j < i + 1; j++){
+        row += "* "
+    }
+    console.log(row)
+}
+
