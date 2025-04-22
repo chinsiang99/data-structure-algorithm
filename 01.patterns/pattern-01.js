@@ -11,3 +11,17 @@ for (let i = 0; i < n; i++) {
     }
     console.log(row);
 }
+
+console.log("--- revision starts here ---")
+
+let k = 5
+
+for(let i = 0; i < k; i++){
+  let row = ""
+  for(let j = 0; j < k; j++){
+    row += "* "
+  }
+  console.log(row)
+}
+
+// time complexity will be O(n^2) because there is two loop
