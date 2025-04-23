@@ -32,3 +32,26 @@ for(let i = 0; i < n; i++){
 
     console.log(space1 + stars + space2)
 }
+
+console.log("--- revision starts here ---")
+
+
+//         *
+//       * * *
+//     * * * * *
+//   * * * * * * *
+// * * * * * * * * *
+let k = 5
+for(let i = 0; i < k; i++){
+    // space1
+    let space1 = ""
+    for(let j = 0; j < k - i - 1; j++){
+        space1 += "  "
+    }
+
+    let star = ""
+    for(let n = 0; n < 2 * i + 1; n++){
+        star += "* "
+    }
+    console.log(space1 + star)
+}
