@@ -61,3 +61,43 @@ for(let i = 0; i < n; i++){
 }
 
 // note that we are not viewing this as symmetric because basically there is no difference, it is up side down, hence we can just use two for loops to do it..
+
+console.log("--- revision starts here ---")
+
+//         *
+//       * * *
+//     * * * * *
+//   * * * * * * *
+// * * * * * * * * *
+// * * * * * * * * *
+//   * * * * * * *
+//     * * * * *
+//       * * *
+//         *
+
+let k = 5
+for(let i = 0; i < k; i++){
+    let space = ""
+    for(let j = 0; j < k - i - 1; j++){
+        space += "  "
+    }
+
+    let stars = ""
+    for(let j = 0; j < 2 * i + 1; j++){
+        stars += "* "
+    }
+    console.log(space + stars)
+}
+
+for(let i = 0; i < k; i++){
+    let space = ""
+    for(let j = 0; j < i; j++){
+        space += "  "
+    }
+    
+    let stars = ""
+    for(let j = 0; j < 2 * k - 2 * i - 1; j++){
+        stars += "* "
+    }
+    console.log(space + stars)
+}
