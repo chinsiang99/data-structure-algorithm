@@ -36,3 +36,30 @@ for(let i = 1; i <= n; i++){
 
     console.log(number1 + space + number2)
 }
+
+console.log("--- revision starts here ---")
+
+// 1      1
+// 12    21
+// 123  321
+// 12344321
+
+let k = 4
+for(let i = 0; i < k; i++){
+    let number1 = ""
+    for(let j = 0; j < i + 1; j++){
+        number1 += j + 1
+        number1 += " "
+    }
+    let space = ""
+    for(let j = 0; j < 2 * k - 2 * i - 2; j++){
+        space += "  "
+    }
+    
+    let number2 = ""
+    for(let j = 0; j < i + 1; j++){
+        number2 += i + 1 - j
+        number2 += " "
+    }
+    console.log(number1 + space + number2)
+}
