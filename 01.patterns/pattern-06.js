@@ -29,3 +29,20 @@ for(let i = 1; i <= n; i++){
     }
     console.log(row)
 }
+
+console.log("--- revision starts here ---")
+
+// 1 2 3 4 5
+// 1 2 3 4
+// 1 2 3
+// 1 2
+// 1
+
+let k = 5
+for(let i = 0; i < k; i++){
+    let row = ""
+    for(let j = 0; j < k - i; j++){
+        row += `${j + 1} `
+    }
+    console.log(row)
+}
