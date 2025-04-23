@@ -29,3 +29,32 @@ for(let i = 1; i <= 2*n-1; i++){
         console.log(stars)
     }
 }
+
+console.log("--- revision starts here ---")
+
+// *
+// * *
+// * * *
+// * * * *
+// * * * * *
+// * * * *
+// * * *
+// * *
+// *
+
+let k = 5
+for(let i = 0; i < 2 * k - 1; i++){
+    if(i < k){
+        let stars = ""
+        for(let j = 0; j < i + 1; j++){
+            stars += "* "
+        }
+        console.log(stars)
+    }else{
+        let stars = ""
+        for(let j = 0; j < 2 * k - i - 1; j++){
+            stars += "* "
+        }
+        console.log(stars)
+    }
+}
