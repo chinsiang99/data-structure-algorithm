@@ -26,3 +26,53 @@ for(let i = 0; i < n; i++){
     }
     console.log(space + stars + space)
 }
+
+
+console.log("--- revision starts here ---")
+
+//         A
+//       A B C
+//     A B C D E
+//   A B C D E F G
+// A B C D E F G H I
+
+let k = 5
+for(let i = 0; i < k; i++){
+    let space = ""
+    for(let j = 0; j < k - i - 1; j++){
+        space += "  "
+    }
+
+    let alphabet = ""
+    for(let j = 0; j < 2 * i + 1; j++){
+        alphabet += `${String.fromCharCode(65 + j)} `
+    }
+
+    console.log(space + alphabet)
+}
+
+console.log("--- revision starts here, another pattern ---")
+
+//    A
+//  A B A       
+//A B C B A
+
+for(let i = 0; i < k; i++){
+    let space = ""
+    for(let j = 0; j < k - i - 1; j++){
+        space += "  "
+    }
+
+    let alphabet = ""
+    let runningNumber = 65
+    for(let j = 0; j < 2 * i + 1; j++){
+        alphabet += `${String.fromCharCode(runningNumber)} `
+        if(j >= i){
+            runningNumber--
+        }else{
+            runningNumber++
+        }
+    }
+
+    console.log(space + alphabet)
+}
