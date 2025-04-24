@@ -37,3 +37,28 @@ for(let i = 0; i < 2 * n - 1; i++){
     }
     console.log(newValueToBePrinted)
 }
+
+console.log("--- revision starts here ---")
+
+// 4444444
+// 4333334
+// 4322234
+// 4321234
+// 4322234
+// 4333334
+// 4444444
+
+let k = 4
+for(let i = 0; i < 2 * k - 1; i++){
+    let row = ""
+    for(let j = 0; j < 2 * k - 1; j++){
+        let left = j
+        let right = 2 * k - 1 - j - 1
+        let top = i
+        let bottom = 2 * k - 1 - i - 1
+        row += k - Math.min(left, right, top, bottom)
+        // if we want to get the new matrix of distance
+        // row += Math.min(left, right, top, bottom)
+    }
+    console.log(row)
+}
