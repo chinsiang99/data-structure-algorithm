@@ -39,8 +39,14 @@ while(k > 0){
     count++
 }
 
-// time complexity for this is O(n) => n is count of digits
+// time complexity for this is O(log10(n)) => n is the digit
 console.log(count)
+
+let m = 7789
+let count1 = Math.floor(Math.log10(m)) + 1
+
+// time complexity is the same
+console.log(count1)
 
 
 
