@@ -21,3 +21,17 @@ console.log(method(n3))
 console.log(method(n4))
 
 // note that the time complexity is actually log base 10 n
+
+
+console.log("--- revision starts here ---")
+
+let k = 578751
+let copy = k
+let result = 0
+while(copy > 0){
+    let lastDigit = copy % 10
+    result = result * 10 + lastDigit
+    copy = Math.floor(copy / 10)
+}
+
+console.log(result === k)
