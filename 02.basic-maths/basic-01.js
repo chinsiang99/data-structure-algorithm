@@ -27,3 +27,20 @@ console.log(method2(n))
 // it should be O(log10(n))
 // because it is divisibled by 10
 // if it is being divisible by 2, then it would be log2(n)
+
+
+console.log("--- revision starts here ---")
+
+let k = 7789
+
+let count = 0
+while(k > 0){
+    k = Math.floor(k / 10)
+    count++
+}
+
+// time complexity for this is O(n) => n is count of digits
+console.log(count)
+
+
+
