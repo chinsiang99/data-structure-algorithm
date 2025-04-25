@@ -63,3 +63,24 @@ console.log(method2(32))
 // == sqrtn (1 + logsqrtn)
 // since we only see the bigger ones, so the time complexity would be sqrtnlogsqrtn
 // note that if we didnt do the sorting, it will be way faster, which is sqrtn if we only console log directly
+
+console.log("--- revision starts here ---")
+
+// printing all divisors
+// meaning that for 36
+// we wil print out 1, 2, 3, 4, 6, 9, 12, 18, 36
+// which is 36 can be divisible by all the above without any remainder
+
+let k = 36
+
+let divisors = [1, 36]
+for(let i = 2; i * i <= k; i++){
+    if(i * i === k){
+        divisors.push(i)
+    }else if(k % i === 0){
+        divisors.push(k/i, i)
+    }
+}
+console.log(divisors)
+
+// time complexity will be sqrt(n)
