@@ -24,3 +24,26 @@ console.log(method(n1))
 console.log(method(n2))
 
 // note that the time complexity is actually log base 10 n
+
+
+console.log("--- revision starts here ---")
+
+let copy = n
+let copy2 = n1
+let copy3 = n2
+
+function methodHi(input){
+    let originalValue = input
+    let result = 0
+    while(input > 0){
+        let lastDigit = input % 10
+        result = result + Math.pow(lastDigit, 3)
+        input = Math.floor(input / 10)
+    }
+
+    console.log(result === originalValue)
+}
+
+methodHi(copy)
+methodHi(copy2)
+methodHi(copy3)
