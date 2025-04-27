@@ -39,3 +39,30 @@ console.log(isPrimeNumber2(n3))
 console.log(isPrimeNumber2(n4))
 
 // note that the time complexity is actually now sqrt(n)
+
+
+console.log("--- revision starts here ---")
+
+
+// prime numbers
+// prime number is a number that can only be divisible by itself and 1
+let k = 3
+let k2 = 6
+let k3 = 4
+let k4 = 11
+
+
+function prime(n){
+    for(let i = 2; i * i <= n; i++){
+        if(n % i === 0){
+            return false
+        }
+    }
+
+    return true
+}
+
+console.log(prime(k))
+console.log(prime(k2))
+console.log(prime(k3))
+console.log(prime(k4))
