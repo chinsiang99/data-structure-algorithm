@@ -85,3 +85,41 @@ function method4(a, b){
 console.log(method4(a, b))
 
 // note that the time complexity will be around O(log(min(a, b)))
+
+console.log("--- revision starts here ---")
+
+// gcd (greatest common divisor) / hcf (highest common factor)
+
+let k = 2
+let k2 = 4
+
+function gcd(n, n2){
+    while(Math.min(n, n2) !== 0){
+        let diff = Math.max(n, n2) - Math.min(n, n2)
+        if(n >= n2){
+            n = diff
+        }else{
+            n2 = diff
+        }
+    }
+
+    console.log(Math.max(n, n2))
+}
+
+gcd(k, k2)
+
+function gcd2(n, n2){
+    while(Math.min(n, n2) !== 0){
+        let remainder = Math.max(n, n2) % Math.min(n, n2)
+
+        if(n >= n2){
+            n = remainder
+        }else{
+            n2 = remainder
+        }
+    }
+
+    console.log(Math.max(n, n2))
+}
+
+gcd2(k, k2)
