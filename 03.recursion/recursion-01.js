@@ -67,3 +67,77 @@ function problem5(i, n){
 }
 
 problem5(1, 5)
+
+
+console.log("--- revision starts here ---")
+
+// recursive basic problems
+// 1. printing name 5 times
+// 2. print from 1 to n
+// 3. print from n to 1
+// 4. print from 1 to n (but with backtrack)
+// 5. print from n to 1 (but with backtrack)
+
+console.log("problem 1 here, printing name 5 times")
+function function1(n){
+    if(n === 0){
+        return
+    }
+
+    console.log("name is here")
+    function1(n-1)
+}
+
+function1(5)
+
+console.log("problem 2 here, printing 1 to n")
+let k = 5
+
+function function2(initial, n){
+    if(initial > n){
+        return
+    }
+    console.log(initial)
+    function2(initial + 1, n)
+}
+
+function2(1, k)
+
+console.log("problem 3 here, from n to 1")
+function function3(n){
+    if(n === 0){
+        return
+    }
+    console.log(n)
+    function3(n - 1)
+}
+
+function3(k)
+
+console.log("problem 4 here, printing 1 to n but backtracing, meaning not using - oranything")
+// let k = 5
+
+function function4(n){
+    if(n < 1){
+        return
+    }
+
+    function4(n-1)
+    console.log(n)
+}
+
+function4(k)
+
+console.log("problem 5 here, printing n to 1 but backtracing, meaning not using - or anything")
+// let k = 5
+
+function function5(initial, n){
+    if(initial > n){
+        return
+    }
+
+    function5(initial + 1, n)
+    console.log(initial)
+}
+
+function5(1, k)
