@@ -50,3 +50,51 @@ function problem2b(n){
 
 console.log(problem2b(n))
 
+
+console.log("--- revision starts here ---")
+
+let k = 5
+// problem 1 => summation of n numbers
+
+function parameterised1(n, sum){
+    if(n < 1){
+        console.log(sum)
+        return
+    }
+    parameterised1(n - 1, sum + n)
+}
+
+parameterised1(k, 0)
+
+
+function functional1(n){
+    if(n === 0){
+        return 0
+    }
+
+    return n + functional1(n - 1)
+}
+
+console.log(functional1(k))
+
+
+// problem 2 => factorial
+
+function parameterised2(n, result){
+    if(n === 1){
+        return result
+    }
+
+    return parameterised2(n - 1, result * n)
+}
+
+console.log(parameterised2(n, 1))
+
+function functional2(n){
+    if(n === 1){
+        return 1
+    }
+    return n * functional2(n - 1)
+}
+
+console.log(functional2(k))
