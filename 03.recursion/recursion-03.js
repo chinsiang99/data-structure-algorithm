@@ -67,3 +67,70 @@ function problem2b(i){
 
 console.log(problem2b(0))
 console.log(problem2b(0))
+
+console.log("--- revision starts here ---")
+
+// problem 1 => reverse an array
+let arrayk = [2, 3, 6, 1, 3, 5, 7, 8]
+
+function reverseArrayLoop(array){
+    for(let i = 0; i < array.length / 2; i++){
+        [array[i], array[array.length - 1 - i]] = [array[array.length - 1 - i], array[i]]
+    }
+}
+
+reverseArrayLoop(arrayk)
+
+console.log(arrayk)
+
+let arrayj = [2, 3, 6, 1, 3, 5, 7, 8]
+function reverseArrayRecursive(arrayj, first, last){
+    if(first >= last){
+        return
+    }
+    [arrayj[first], arrayj[last]] = [arrayj[last], arrayj[first]]
+    reverseArrayRecursive(arrayj, first + 1, last - 1)
+}
+
+reverseArrayRecursive(arrayj, 0, arrayj.length - 1)
+
+console.log(arrayj)
+
+// problem 2, check whether a string is palindrome
+
+let stringj = "hello"
+let stringj1 = 'iei'
+let stringj2 = 'madam'
+let stringj3 = '11211'
+function palindrome(string, first, last){
+    if(first >= last){
+        return true
+    }
+
+    if(string[first] !== string[last]){
+        return false
+    }
+
+    return palindrome(string, first + 1, last - 1)
+}
+
+console.log(palindrome(stringj, 0, stringj.length - 1))
+console.log(palindrome(stringj1, 0, stringj1.length - 1))
+console.log(palindrome(stringj2, 0, stringj2.length - 1))
+console.log(palindrome(stringj3, 0, stringj3.length - 1))
+
+function palindromLoop(string){
+    let last = string.length - 1
+    for(let i = 0; i <= string.length / 2; i++){
+        if(string[i] !== string[last]){
+            return false
+        }
+        last = last - 1
+    }
+    return true
+}
+
+console.log(palindromLoop(stringj))
+console.log(palindromLoop(stringj1))
+console.log(palindromLoop(stringj2))
+console.log(palindromLoop(stringj3))
