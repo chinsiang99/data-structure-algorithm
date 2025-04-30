@@ -64,3 +64,60 @@ function fibonacci4(n, memo = new Map()){
 }
 
 console.log(fibonacci4(4))
+
+console.log("--- revision starts here ---")
+
+function iterativeWay(n){
+    let a = 0
+    let b = 1
+    let result = 0
+
+    if(n <= 1){
+        console.log(n)
+        return
+    }
+
+    for(let i = 2; i <= n; i++){
+        result = a + b
+        a = b
+        b = result
+    }
+
+    console.log(result)
+
+}
+
+iterativeWay(6)
+iterativeWay(4)
+iterativeWay(0)
+
+function recursiveWay(n){
+    if(n <= 1){
+        return n
+    }
+
+    return recursiveWay(n -1) + recursiveWay(n - 2)
+}
+
+console.log(recursiveWay(6))
+console.log(recursiveWay(4))
+console.log(recursiveWay(0))
+
+
+function recursiveWayBetter(n, memo = new Map()){
+    if(n <= 1){
+        return n
+    }
+
+    if(memo.has(n)){
+        return memo.get(n)
+    }
+
+    memo.set(n, recursiveWayBetter(n - 1, memo) + recursiveWayBetter(n - 2, memo))
+
+    return memo.get(n)
+}
+
+console.log(recursiveWayBetter(6))
+console.log(recursiveWayBetter(4))
+console.log(recursiveWayBetter(0))
