@@ -43,3 +43,28 @@ selectionSortDescending(newArray)
 console.log(newArray)
 
 // both time complexity is O(n)
+
+
+console.log("--- revision starts here ---")
+
+newArray = [1, 2, 6, 7, 3, 4, 5]
+function selectionSort(arr){
+    for(let i = 0; i < arr.length; i++){
+        let minimumIndex = i
+        for(let j = i + 1; j < arr.length; j++){
+            if(arr[j] < arr[minimumIndex]){
+                minimumIndex = j
+            }
+        }
+
+        if(minimumIndex !== i){
+            let temp = arr[i]
+            arr[i] = arr[minimumIndex]
+            arr[minimumIndex] = temp
+        }
+    }
+
+    return arr
+}
+
+console.log(selectionSort(newArray))
