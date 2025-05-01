@@ -46,3 +46,42 @@ function insertionSortBest(arr){
 
 insertionSortBest(newArray)
 console.log(newArray)
+
+console.log("--- revision starts here ---")
+
+newArray = [1, 2, 2, 1, 5, 4, 7, 2, 3]
+function insertionSort(arr){
+    for(let i = 0; i < arr.length; i++){
+        for(let j = i + 1; j > 0; j--){
+            if(arr[j] < arr[j - 1]){
+                let temp = arr[j]
+                arr[j] = arr[j - 1]
+                arr[j - 1] = temp
+            }else{
+                break
+            }
+        }
+    }
+
+    console.log(arr)
+}
+
+insertionSort(newArray)
+
+newArray = [1, 2, 2, 1, 5, 4, 7, 2, 3]
+function insertionSortHello(arr){
+    for(let i = 1; i < arr.length; i++){
+        let current = arr[i]
+        let previousIndex = i - 1
+
+        while(previousIndex >= 0 && current < arr[previousIndex]){
+            arr[previousIndex + 1] = arr[previousIndex]
+            previousIndex--
+        }
+
+        arr[previousIndex + 1] = current
+    }
+    console.log(arr)
+}
+
+insertionSortHello(newArray)
