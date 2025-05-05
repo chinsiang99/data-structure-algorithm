@@ -140,3 +140,51 @@ console.log(arrayNumbers2)
 // the total time complexity is O(n log n).
 
 // space complexity is O(n)
+
+console.log("--- revision starts here ---")
+
+arrayNumbers = [1, 3, 2, 5, 7, 2, 1]
+
+function mergeSortRevision(arr, low, high){
+    if(low >= high){
+        return
+    }
+    let mid = Math.floor((low + high) / 2)
+    mergeSortRevision(arr, low, mid)
+    mergeSortRevision(arr, mid + 1, high)
+    mergingStep(arr, low, mid, high)
+}
+
+function mergingStep(arr, low, mid, high){
+
+    let temporaryArray = []
+    let left = low
+    let right = mid + 1
+    while(left <= mid && right <= high){
+        if(arr[left] > arr[right]){
+            temporaryArray.push(arr[right])
+            right++
+        }else{
+            temporaryArray.push(arr[left])
+            left++
+        }
+    }
+
+    while(left <= mid){
+        temporaryArray.push(arr[left])
+        left++
+    }
+
+    while(right <= high){
+        temporaryArray.push(arr[right])
+        right++
+    }
+
+    for(let i = low; i <= high; i++){
+        arr[i] = temporaryArray[i - low]
+    }
+}
+
+mergeSortRevision(arrayNumbers, 0, arrayNumbers.length - 1)
+
+console.log(arrayNumbers)
