@@ -40,3 +40,78 @@ function getPartition(arr, low, high){
 
 quickSortAsc(arrayNumbers, 0, arrayNumbers.length - 1)
 console.log(arrayNumbers)
+
+
+console.log("--- revision starts here ---")
+
+arrayNumbers = [1, 2, 5, 6, 7, 3, 4, 9, 8]
+function quickSort(arr, low, high){
+    if(low < high){
+        let partition = sort(arr, low, high)
+        quickSort(arr, low, partition - 1)
+        quickSort(arr, partition + 1, high)
+    }
+}
+
+function sort(arr, low, high){
+    let pivot = arr[low]
+    let i = low + 1
+    let j = high
+    while(i <= j){
+        while(arr[i] <= pivot && i <= high){
+            i++
+        }
+
+        while(arr[j] > pivot && j >= low + 1){
+            j--
+        }
+
+        if(i < j){
+            let temp = arr[i]
+            arr[i] = arr[j]
+            arr[j] = temp
+        }
+    }
+
+    let temp = arr[low]
+    arr[low] = arr[j]
+    arr[j] = temp
+
+    return j
+}
+
+// function quickSort(arr, low, high) {
+//     if (low < high) {
+//         let partitionIndex = partition(arr, low, high);
+//         quickSort(arr, low, partitionIndex - 1);
+//         quickSort(arr, partitionIndex + 1, high);
+//     }
+// }
+
+// function partition(arr, low, high) {
+//     let pivot = arr[low];
+//     let i = low + 1;
+//     let j = high;
+
+//     while (i <= j) {
+//         while (i <= high && arr[i] <= pivot) {
+//             i++;
+//         }
+//         while (j >= low + 1 && arr[j] > pivot) {
+//             j--;
+//         }
+
+//         if (i < j) {
+//             [arr[i], arr[j]] = [arr[j], arr[i]];
+//         }
+//     }
+
+//     [arr[low], arr[j]] = [arr[j], arr[low]];
+//     return j;
+// }
+
+// quickSort(arrayNumbers, 0, arrayNumbers.length - 1);
+// console.log(arrayNumbers);
+quickSort(arrayNumbers, 0, arrayNumbers.length - 1)
+
+console.log(arrayNumbers)
