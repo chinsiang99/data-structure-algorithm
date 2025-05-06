@@ -44,3 +44,52 @@ for(let i = 1; i < arrayNumbers3.length; i++){
     }
 }
 console.log(secondHighest)
+
+
+console.log("--- revision starts here ---")
+
+arrayNumbers = [1, 2, 4, 5, 3, 2, 7, 8, 8, 7, 9]
+let largestNumber = arrayNumbers[0]
+let secondLargestNumber = -1
+for(let i = 1; i < arrayNumbers.length; i++){
+    if(arrayNumbers[i] > secondLargestNumber){
+        if(arrayNumbers[i] > largestNumber){
+            secondLargestNumber = largestNumber
+            largestNumber = arrayNumbers[i]
+        }else{
+            secondLargestNumber = arrayNumbers[i]
+        }
+    }
+}
+
+console.log(largestNumber, secondLargestNumber)
+
+let leftPointer = 0
+let rightPointer = arrayNumbers.length - 1
+let largestValue = Math.max(arrayNumbers[leftPointer], arrayNumbers[rightPointer])
+let secondLargestValue = Math.min(arrayNumbers[leftPointer], arrayNumbers[rightPointer])
+leftPointer++
+rightPointer--
+while(leftPointer <= rightPointer){
+    if(arrayNumbers[leftPointer] > secondLargestValue){
+        if(arrayNumbers[leftPointer] > largestValue){
+            secondLargestValue = largestValue
+            largestValue = arrayNumbers[leftPointer]
+        }else{
+            secondLargestValue = arrayNumbers[leftPointer]
+        }
+    }
+
+    if(arrayNumbers[rightPointer] > secondLargestValue){
+        if(arrayNumbers[rightPointer] > largestValue){
+            secondLargestValue = largestValue
+            largestValue = arrayNumbers[rightPointer]
+        }else{
+            secondLargestValue = arrayNumbers[rightPointer]
+        }
+    }
+    leftPointer++
+    rightPointer--
+}
+
+console.log(largestValue, secondLargestValue)
