@@ -48,7 +48,7 @@ console.log(secondHighest)
 
 console.log("--- revision starts here ---")
 
-arrayNumbers = [1, 2, 4, 5, 3, 2, 7, 8, 8, 7, 9]
+arrayNumbers = [1, 2, 4, 5, 3, 2, 7, 8, 8, 7, 9, 9]
 let largestNumber = arrayNumbers[0]
 let secondLargestNumber = -1
 for(let i = 1; i < arrayNumbers.length; i++){
@@ -75,7 +75,7 @@ while(leftPointer <= rightPointer){
         if(arrayNumbers[leftPointer] > largestValue){
             secondLargestValue = largestValue
             largestValue = arrayNumbers[leftPointer]
-        }else{
+        }else if(arrayNumbers[leftPointer] !== largestValue){
             secondLargestValue = arrayNumbers[leftPointer]
         }
     }
@@ -84,7 +84,7 @@ while(leftPointer <= rightPointer){
         if(arrayNumbers[rightPointer] > largestValue){
             secondLargestValue = largestValue
             largestValue = arrayNumbers[rightPointer]
-        }else{
+        }else if(arrayNumbers[rightPointer] !== largestValue){
             secondLargestValue = arrayNumbers[rightPointer]
         }
     }
@@ -92,4 +92,7 @@ while(leftPointer <= rightPointer){
     rightPointer--
 }
 
+if(largest === secondLargest){
+    console.log(-1)
+}
 console.log(largestValue, secondLargestValue)
