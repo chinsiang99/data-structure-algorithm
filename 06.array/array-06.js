@@ -55,3 +55,84 @@ function reverseNumber(arr, first, last){
 console.log("original 2", arrayNumbers3)
 leftRotateByNPlacesOptimal(arrayNumbers3, 2)
 console.log("rotated 2", arrayNumbers3)
+
+
+console.log("--- revision starts here ---")
+
+// rotate array by one place
+
+let arrayRotate = [1, 2, 3, 4, 5]
+let temp = arrayRotate[0]
+for(let i = 1; i < arrayRotate.length; i++){
+    arrayRotate[i - 1] = arrayRotate[i]
+}
+arrayRotate[arrayRotate.length - 1] = temp
+
+console.log(arrayRotate)
+
+
+let arrayRotateN = [1, 2, 3, 4, 5, 6, 7, 8]
+
+let rotateN = 13
+let rotateValue = rotateN % arrayRotateN.length
+let temporaryArray = []
+for(let i = 0; i < rotateValue; i++){
+    temporaryArray.push(arrayRotateN[i])
+}
+console.log(temporaryArray, "temporaryArray here")
+for(let i = rotateValue; i < arrayRotateN.length; i++){
+    arrayRotateN[i - rotateValue] = arrayRotateN[i]
+}
+
+// let smallPointer = 0
+// for(let i = arrayRotateN.length - rotateValue; i < arrayRotateN.length; i++){
+//     arrayRotateN[i] = temporaryArray[smallPointer]
+//     smallPointer++
+// }
+
+// or instead of using pointer, we can use mathematical way to do it as well
+for(let i = arrayRotateN.length - rotateValue; i < arrayRotateN.length; i++){
+    arrayRotateN[i] = temporaryArray[i - (arrayRotateN.length - rotateValue)]
+}
+
+// note that this will have time complexity of O(n + d)
+// space complexity will be O(d)
+console.log(arrayRotateN)
+
+// now we will try to make it optimal by making it not having space complexity
+
+let arrayOptimal = [1, 2, 3, 4, 5, 6, 7, 8]
+let rotateD = 13
+rotateValue = rotateD % arrayOptimal.length
+// we will try to reverse the array
+let leftPointer = 0
+let rightPointer = rotateValue - 1
+while(leftPointer < rightPointer){
+    let temp = arrayOptimal[leftPointer]
+    arrayOptimal[leftPointer] = arrayOptimal[rightPointer]
+    arrayOptimal[rightPointer] = temp
+    leftPointer++
+    rightPointer--
+}
+
+leftPointer = rotateValue
+rightPointer = arrayOptimal.length - 1
+while(leftPointer < rightPointer){
+    let temp = arrayOptimal[leftPointer]
+    arrayOptimal[leftPointer] = arrayOptimal[rightPointer]
+    arrayOptimal[rightPointer] = temp
+    leftPointer++
+    rightPointer--
+}
+
+leftPointer = 0
+rightPointer = arrayOptimal.length - 1
+while(leftPointer < rightPointer){
+    let temp = arrayOptimal[leftPointer]
+    arrayOptimal[leftPointer] = arrayOptimal[rightPointer]
+    arrayOptimal[rightPointer] = temp
+    leftPointer++
+    rightPointer--
+}
+
+console.log(arrayOptimal)
