@@ -40,3 +40,22 @@ for(let i = zeroIndex + 1; i < arrayNumbers2.length; i++){
 
 // this has a time complexity og O(n)
 console.log(arrayNumbers2)
+
+
+console.log("--- revision starts here ---")
+
+let array = [1, 2, 5, 0, 3, 4, 0, 0, 2, 1, 0]
+
+let pointer = 0
+for(let i = 0; i < array.length; i++){
+    if(array[i] !== 0){
+        array[pointer] = array[i]
+        pointer++
+    }
+}
+
+for(let i = pointer; i < array.length; i++){
+    array[i] = 0
+}
+
+console.log(array)
