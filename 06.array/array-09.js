@@ -57,3 +57,57 @@ function unionOptimal(arr1, arr2){
 }
 
 console.log(unionOptimal(arr1, arr2))
+
+console.log("--- revision starts here ---")
+
+let array1 = [1, 2, 3, 4, 5]
+let array2 = [4, 5, 6, 7, 8, 9, 11, 12]
+
+let newSet = new Set()
+
+for(let i = 0; i < array1.length; i++){
+    newSet.add(array1[i])
+}
+
+for(let i = 0; i < array2.length; i++){
+    newSet.add(array2[i])
+}
+
+// this will have complexity of n + m + k, meaning maybe 3n and space complexity of n
+console.log(Array.from(newSet))
+
+
+// now we will try to use the two pointer approach
+let pointer1 = 0
+let pointer2 = 0
+let newUnionArray = []
+
+while(pointer1 < array1.length && pointer2 < array2.length){
+    if(array1[pointer1] <= array2[pointer2]){
+        if(newUnionArray.length === 0 || array1[pointer1] !== newUnionArray[newUnionArray.length - 1]){
+            newUnionArray.push(array1[pointer1]) 
+        }
+        pointer1++
+    }else{
+        if(newUnionArray.length === 0 || array2[pointer2] !== newUnionArray[newUnionArray.length - 1]){
+            newUnionArray.push(array2[pointer2])
+        }
+        pointer2++
+    }
+}
+
+while(pointer1 < array1.length){
+    if(newUnionArray.length === 0 || array1[pointer1] !== newUnionArray[newUnionArray.length - 1]){
+        newUnionArray.push(array1[pointer1])
+    }
+    pointer1++
+}
+
+while(pointer2 < array2.length){
+    if(newUnionArray.length === 0 || array2[pointer2] !== newUnionArray[newUnionArray.length - 1]){
+        newUnionArray.push(array2[pointer2])
+    }
+    pointer2++
+}
+
+console.log(newUnionArray)
