@@ -81,3 +81,58 @@ function findMissingNumberXOR(arrayL, n){
 }
 
 console.log(findMissingNumberXOR(arrayL, 5))
+
+
+console.log("--- revision starts here ---")
+
+let n = 5 // note that this is 1 until 5 value
+let arrayRevision = [1, 2, 4, 5]
+
+function solution(arr, n){
+    for(let i = 1; i <= n; i++){
+        let missing = true
+        for(let j = 0; j < arr.length; j++){
+            if(i === arr[j]){
+                missing = false
+                break
+            }
+        }
+        if(missing){
+            console.log(i)
+            break
+        }
+    }
+}
+
+// time complexity is n^2
+// space complexity is constant
+solution(arrayRevision, n)
+
+// note that this solution is good when it is not sorted, if it is sorted, we can actually do it in linear way
+function solution2(arr, n){
+    let array = new Array(n + 1).fill(0)
+    for(let i = 0; i < arr.length; i++){
+        array[arr[i]] = 1
+    }
+    for(let i = 1; i < array.length; i++){
+        if(array[i] === 0){
+            console.log(i)
+        }
+    }
+}
+
+// time complexity is 2n
+// space complexity is n
+solution2(arrayRevision, n)
+
+let xor1 = 0
+let xor2 = 0
+for(let i = 0; i < arrayRevision.length; i++){
+    xor1 = xor1 ^ arrayRevision[i]
+    xor2 = xor2 ^ (i + 1)
+}
+xor2 = xor2 ^ n
+let missingNumber = xor1 ^ xor2
+console.log(missingNumber)
+
+let sum = n * (n + 1) / 2 // please note that this is very important yo
