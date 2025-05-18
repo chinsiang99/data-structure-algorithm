@@ -15,3 +15,18 @@ function twoSum(arr, target){
 
 // note that the time complexity for this is actually O(n), the space complexity is also O(n) because we havea set data structure
 console.log(twoSum(array, target))
+
+console.log("--- revision starts here ---")
+let targethehe = 7
+let newSet = new Set([array[0]])
+let flag = false
+for(let i = 1; i < array.length; i++){
+    let diff = targethehe - array[i]
+    if(newSet.has(diff)){
+        flag = true
+    }
+
+    newSet.add(array[i])
+}
+
+console.log(flag)
