@@ -62,3 +62,69 @@ function threePointerSolution(arr){
 // note that the time complexity of this approach has a O(n), and space complexity of O(1)
 threePointerSolution(array2)
 console.log(array2)
+
+// please view this
+
+console.log("--- revision starts here ---")
+
+let array1 = [0, 1, 2, 0, 1, 2, 1, 2, 0, 0, 0, 1]
+
+let pointer0 = -1
+let pointer1 = 0
+let pointer2 = 1
+for(let i = 0; i < array1.length; i++){
+    if(array1[i] === 0){
+        pointer0++
+        pointer1++
+    }else if(array1[i] === 1){
+        pointer1++
+    }
+}
+
+console.log(pointer0, pointer1, pointer2)
+
+for(let i = 0; i <= pointer0; i++){
+    array1[i] = 0
+}
+
+for(let i = pointer0 + 1; i < pointer1; i++){
+    array1[i] = 1
+}
+
+for(let i = pointer1; i < array1.length; i++){
+    array1[i] = 2
+}
+
+// please note that this has O(2n) time complexity
+console.log(array1)
+
+// now we will do a better one, but we need some imagination here...
+
+let arrayOptimal = [0, 1, 2, 0, 1, 2, 1, 2, 0, 0, 0, 1]
+
+let low = 0
+let mid = 0
+let high = arrayOptimal.length - 1
+
+while(mid <= high){
+    if(arrayOptimal[mid] === 0){
+        if (low !== mid) {
+            arrayOptimal[low] ^= arrayOptimal[mid]
+            arrayOptimal[mid] ^= arrayOptimal[low]
+            arrayOptimal[low] ^= arrayOptimal[mid]
+        }
+        low++
+        mid++
+    }else if(arrayOptimal[mid] === 1){
+        mid++
+    }else{
+        if (mid !== high) {
+            arrayOptimal[high] ^= arrayOptimal[mid]
+            arrayOptimal[mid] ^= arrayOptimal[high]
+            arrayOptimal[high] ^= arrayOptimal[mid]
+        }
+        high--
+    }
+}
+
+console.log(arrayOptimal)
