@@ -66,3 +66,55 @@ function mooreVotingAlgorithm(arr){
 
 // here, our time complexity is actually O(n) + O(n), which can consider O(n), and space complexity is none, O(1)
 console.log(mooreVotingAlgorithm(array))
+
+
+console.log("--- revision starts here ---")
+
+// majority element?
+
+let array1 = [2, 2, 3, 3, 1, 2, 2, 1, 1, 2, 2]
+
+let map = new Map()
+for(let i = 0; i < array1.length; i++){
+    if(!map.has(array1[i])){
+        map.set(array1[i], 1)
+    }else{
+        map.set(array1[i], map.get(array1[i]) + 1)
+    }
+}
+console.log(map, Math.floor(array1.length / 2))
+for(const [key, value] of map){
+    if(value > Math.floor(array1.length / 2)){
+        console.log(key, "is the one majority")
+    }
+}
+
+// now we will apply the optimal solution, best one, moore's voting algo (assume we have known that it will always having answer)
+let cnt = 0
+let element = -1
+for(let i = 0; i < array1.length; i++){
+    if(cnt === 0){
+        cnt++
+        element = array1[i]
+    }else{
+        if(element === array1[i]){
+            cnt++
+        }else{
+            cnt--
+        }
+    }
+}
+
+console.log(element)
+
+// verification steps
+let countElement = 0
+for(let i = 0; i < array1.length; i++){
+    if(array1[i] === element){
+        countElement += 1
+        if(countElement > Math.floor(array1.length / 2)){
+            console.log(element, "is the one majority yes sir")
+            break
+        }
+    }
+}
