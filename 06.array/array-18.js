@@ -33,3 +33,14 @@ function kadaneAlgo(arr){
 }
 // time complexity for this method is O(n), space complexity O(1)
 console.log(kadaneAlgo(array))
+
+console.log("--- revision starts here ---")
+
+let maximum = array[0]
+let cumulative = array[0]
+for(let i = 0; i < array.length; i++){
+    cumulative = Math.max(array[i], cumulative + array[i])
+    maximum = Math.max(maximum, cumulative)
+}
+
+console.log(maximum)
