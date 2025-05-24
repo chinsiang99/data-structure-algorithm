@@ -20,3 +20,19 @@ function method1(arr){
 }
 
 console.log(method1(array))
+
+console.log("--- revision starts here ---")
+
+let array2 = [7, 1, 5, 3, 6, 4]
+
+let minimumSoFar = array2[0]
+let profit = 0
+for(let i = 1; i < array2.length; i++){
+    let currentProfit = array2[i] - minimumSoFar
+    if(currentProfit > profit){
+        profit = currentProfit
+    }
+    minimumSoFar = Math.min(minimumSoFar, array2[i])
+}
+
+console.log(profit)
