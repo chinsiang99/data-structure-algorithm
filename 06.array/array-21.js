@@ -54,3 +54,50 @@ function method(arr){
 method(array)
 
 console.log(array)
+
+
+
+
+console.log("--- revision starts here ---")
+
+let array2 = [2, 1, 5, 4, 3, 0, 0]
+
+let breakPoint = -1
+for(let i = array2.length - 1; i > 0; i--){
+    if(array2[i - 1] < array2[i]){
+        breakPoint = i - 1
+    }
+}
+
+if(breakPoint === -1){
+    let pointerleft = 0
+    let pointerright = array2.length - 1
+    while(pointerleft <= pointerright){
+        let temp = array2[pointerleft]
+        array2[pointerleft] = array2[pointerright]
+        array2[pointerright] = temp
+        pointerleft++
+        pointerright--
+    }
+}else{
+    for(let i = array2.length - 1; i > breakPoint; i--){
+        if(array2[breakPoint] < array2[i]){
+            let temp = array2[breakPoint]
+            array2[breakPoint] = array2[i]
+            array2[i] = temp
+            break;
+        }
+    }
+
+    let pointerleft = breakPoint + 1
+    let pointerright = array2.length - 1
+    while(pointerleft <= pointerright){
+        let temp = array2[pointerleft]
+        array2[pointerleft] = array2[pointerright]
+        array2[pointerright] = temp
+        pointerleft++
+        pointerright--
+    }
+}
+
+console.log(array2)
