@@ -46,3 +46,38 @@ function method2(arr){
 }
 // note that the time complexity is being reduced to O(n) instead of O(n^2)
 console.log(method2(array))
+
+
+console.log("--- revision starts here ---")
+
+let answer = []
+for(let i = 0; i < array.length; i++){
+    let leader = true
+    for(let j = i + 1; j < array.length; j++){
+        if(array[i] < array[j]){
+            leader = false
+            break;
+        }
+    }
+
+    if(leader){
+        answer.push(array[i])
+    }
+}
+console.log(answer)
+
+
+// below is a way better approach, sometimes we just need to tweak our thoughts, 
+// we will now count from behind, since it always rely on the right most one
+
+let answer2 = [array[array.length - 1]]
+let maximumAsOfNow = array[array.length - 1]
+
+for(let i = array.length - 2; i >=0; i--){
+    if(array[i] > maximumAsOfNow){
+        answer2.push(array[i])
+    }
+    maximumAsOfNow = Math.max(array[i], maximumAsOfNow)
+}
+
+console.log(answer2)
