@@ -55,3 +55,46 @@ method2(array)
 
 // note that this metod has a time complexity of O(n) and O(1) of space complexity
 console.log(array)
+
+console.log("--- revision starts here ---")
+
+let array2 = [3, 1, -2, -5, 2, -4]
+// brute force solution
+// first we will check which is negative and which is positive
+
+let positive = []
+let negative = []
+for(let i = 0; i < array2.length; i++){
+    if(array2[i] > 0){
+        positive.push(array2[i])
+    }else{
+        negative.push(array2[i])
+    }
+}
+
+for(let i = 0; i < (array2.length) / 2; i++){
+    array2[2 * i] = positive[i]
+    array2[2 * i + 1] = negative[i]
+}
+
+// this will have O(2n) time complexity and n space complexity
+console.log(array2)
+
+// now we try to improve slightly for the time complexity
+
+let array3 = [3, 1, -2, -5, 2, -4]
+let pointerPositive = 0
+let pointerNegative = 1
+let newArray = []
+
+for(let i = 0; i < array3.length; i++){
+    if(array3[i] > 0){
+        newArray[pointerPositive] = array3[i]
+        pointerPositive += 2
+    }else{
+        newArray[pointerNegative] = array3[i]
+        pointerNegative += 2
+    }
+}
+
+console.log(newArray)
