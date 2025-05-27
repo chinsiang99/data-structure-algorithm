@@ -52,3 +52,45 @@ function method2(arr){
 }
 // this method has a time complexity of O(2n) because we can see that the outer loop runs for n times, but the inner while loop will only run at most n times, therefore we can actually say it is not a multiply but an addition furthermore, we convert it to a set which consumes O(n), therefore total up should be O(3n) which can be said it is O(n), space complexity is O(n)
 console.log(method2(array2))
+
+
+console.log("--- revision starts here ---")
+
+array.sort((a, b) => a-b)
+
+let counting = 1
+let maximum = 1
+for(let i = 1; i < array.length; i++){
+    if(array[i] === array[i - 1]){
+        continue
+    }
+
+    if(array[i] === array[i - 1] + 1){
+        counting++
+        maximum = Math.max(maximum, counting)
+    }else{
+        counting = 1
+    }
+}
+
+console.log(counting)
+
+// now we will try another method, but we might need to consume space for it...
+// let newSet = new Set(arr)
+
+array = [102, 4, 100, 1, 101, 2, 3, 2, 1, 1, 103, 104, 105]
+let newSet = new Set(array)
+let count = 1
+for(let num of newSet){
+    if(newSet.has(num - 1)){
+        continue
+    }
+    let counter = 1
+    while(newSet.has(num + counter)){
+        counter++
+    }
+
+    count = Math.max(counter, count)
+}
+
+console.log(count)
