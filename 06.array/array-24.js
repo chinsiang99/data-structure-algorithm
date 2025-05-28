@@ -145,3 +145,76 @@ function method3(matrix){
 method3(matrix3)
 
 console.log(matrix3)
+
+
+console.log("--- revision starts here ---")
+
+matrix = [
+    [1, 1, 1, 1],
+    [1, 0, 0, 1],
+    [1, 1, 0, 1],
+    [1, 1, 1, 1]
+]
+
+for(let i = 0; i < matrix.length; i++){
+    for(let j = 0; j < matrix[i].length; j++){
+        if(matrix[i][j] === 0){
+            for(let i = 0; i < matrix.length; i++){
+                if(matrix[i][j] === 0){
+                    continue
+                }else{
+                    matrix[i][j] = -1
+                }
+            }
+
+            for(let k = 0; k < matrix[i].length; k++){
+                if(matrix[i][k] === 0){
+                    continue
+                }else{
+                    matrix[i][k] = -1
+                }
+            }
+        }
+    }
+}
+
+for(let i = 0; i < matrix.length; i++){
+    for(let j = 0; j < matrix[i].length; j++){
+        if(matrix[i][j] === -1){
+            matrix[i][j] = 0
+        }    
+    }
+}
+
+// time complexity will be around n^3, I would say
+console.log(matrix)
+
+// a better solution, by using some space
+
+matrix = [
+    [1, 1, 1, 1],
+    [1, 0, 0, 1],
+    [1, 1, 0, 1],
+    [1, 1, 1, 1]
+]
+let row = new Array(matrix.length).fill(1)
+let column = new Array(matrix[0].length).fill(1)
+
+for(let i = 0; i < matrix.length; i++){
+    for(let j = 0; j < matrix[i].length; j++){
+        if(matrix[i][j] === 0){
+            row[i] = 0
+            column[j] = 0
+        }
+    }
+}
+
+for(let i = 0; i < matrix.length; i++){
+    for(let j = 0; j < matrix[i].length; j++){
+        if(row[i] === 0 || column[j] === 0){
+            matrix[i][j] = 0
+        }
+    }
+}
+
+console.log(matrix)
