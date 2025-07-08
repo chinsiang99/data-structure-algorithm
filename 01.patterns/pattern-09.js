@@ -101,3 +101,47 @@ for(let i = 0; i < k; i++){
     }
     console.log(space + stars)
 }
+
+// final revision
+//         *
+//       * * *
+//     * * * * *
+//   * * * * * * *
+// * * * * * * * * *
+// * * * * * * * * *
+//   * * * * * * *
+//     * * * * *
+//       * * *
+//         *
+
+let rows = 5
+for(let i = 0; i < rows; i++){
+    let space = ''
+    for(let j = 0; j < rows - i - 1; j++){
+        space += '  '
+    }
+
+    let stars = ''
+    for(let j = 0; j < 2 * i + 1; j++){
+        stars += '* '
+    }
+    console.log(space + stars)
+}
+
+
+for(let i = 0; i < rows; i++){
+    let space = ''
+    for(let j = 0; j < i; j++){
+        space += '  '
+    }
+
+    let stars = ''
+    for(let j = 0; j < 2 * rows - (2 * i + 1); j++){
+        stars += '* '
+    }
+
+    console.log(space + stars)
+}
+
+
+
