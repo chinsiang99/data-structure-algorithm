@@ -46,3 +46,21 @@ for(let i = 0; i < k; i++){
     }
     console.log(row)
 }
+
+// final revision
+
+// 1 2 3 4 5
+// 1 2 3 4
+// 1 2 3
+// 1 2
+// 1
+
+let rows = 5
+
+for(let i = 0; i < rows; i++){
+    let numbers = ''
+    for(let j = 0; j < rows - i; j++){
+        numbers += `${j + 1} `
+    }
+    console.log(numbers)
+}
