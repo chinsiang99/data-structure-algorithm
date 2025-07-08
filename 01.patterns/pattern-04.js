@@ -37,3 +37,20 @@ for(let i = 0; i < k; i++){
     }
     console.log(row)
 }
+
+// final revision
+
+
+// 1
+// 2 2
+// 3 3 3
+// 4 4 4 4
+// 5 5 5 5 5
+let rows = 5
+for(let i = 0; i < rows; i++){
+    let numbers = ''
+    for(let j = 0; j < i + 1; j++){
+        numbers += `${i + 1} `
+    }
+    console.log(numbers)
+}
