@@ -39,3 +39,20 @@ for(let i = 0; i < k; i++){
     }
     console.log(row)
 }
+
+// final revision
+
+// this will output this
+// 1
+// 1 2
+// 1 2 3
+// 1 2 3 4
+// 1 2 3 4 5
+let rows = 5
+for(let i = 1; i <= rows; i++){
+    let numbers = ''
+    for(let j = 1; j <= i; j++){
+        numbers += `${j} `
+    }
+    console.log(numbers)
+}
