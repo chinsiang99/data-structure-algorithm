@@ -58,3 +58,28 @@ for(let i = 0; i < 2 * k - 1; i++){
         console.log(stars)
     }
 }
+
+// final revision
+// *
+// * *
+// * * *
+// * * * *
+// * * * * *
+// * * * *
+// * * *
+// * *
+// *
+let rows = 4
+for(let i = 0; i < 2 * n + 1; i++){
+    let stars = ''
+    if(i <= 4){
+        for(let j = 0; j < i + 1; j++){
+            stars += '* '
+        }
+    }else{
+        for(let j = 0; j < 2 * n + 1 - i; j++){
+            stars += '* '
+        }
+    }
+    console.log(stars)
+}
