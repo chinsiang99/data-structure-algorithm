@@ -83,3 +83,17 @@ for(let i = 0; i < 2 * n + 1; i++){
     }
     console.log(stars)
 }
+
+rows = 5
+
+for(let i = 1; i <= 2 * rows - 1; i++){
+    let starsCount = i
+    if(i > rows){
+        starsCount = 2 * rows - i
+    }
+    let stars = ''
+    for(let j = 0; j < starsCount; j++){
+        stars += '* '
+    }
+    console.log(stars)
+}
