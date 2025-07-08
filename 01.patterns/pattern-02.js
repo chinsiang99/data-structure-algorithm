@@ -25,3 +25,20 @@ for(let i = 0; i < k; i++){
     console.log(row)
 }
 
+// final revision
+
+// this will output this
+// *
+// * *
+// * * *
+// * * * *
+// * * * * *
+
+let rows = 5
+for(let i = 0; i < rows; i++){
+    let stars = ''
+    for(let j = 0; j < i + 1; j++){
+        stars += '* '
+    }
+    console.log(stars)
+}
