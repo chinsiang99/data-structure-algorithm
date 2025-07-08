@@ -46,3 +46,18 @@ for(let i = 0; i < k; i++){
     }
     console.log(row)
 }
+
+// final revision
+// * * * * *
+// * * * *
+// * * *
+// * *
+// *
+let rows = 5
+for(let i = 0; i < rows; i++){
+    let stars = ''
+    for(let j = 0; j < rows - i; j++){
+        stars += '* '
+    }
+    console.log(stars)
+}
