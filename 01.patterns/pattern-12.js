@@ -63,3 +63,29 @@ for(let i = 0; i < k; i++){
     }
     console.log(number1 + space + number2)
 }
+
+
+// final revision
+// 1      1
+// 12    21
+// 123  321
+// 12344321
+let rows = 4
+for(let i = 1; i <= rows; i++){
+    let numbers = ''
+    for(let j = 0; j < i; j++){
+        numbers += `${j + 1} `
+    }
+
+    let spaces = ''
+    for(let j = 0; j < rows - i; j++){
+        spaces += '  '
+    }
+
+    let behindNumbers = ''
+    for(let j = i; j >= 1; j--){
+        behindNumbers += `${j} `
+    }
+
+    console.log(numbers + spaces + spaces + behindNumbers)
+}
