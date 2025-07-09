@@ -33,3 +33,20 @@ for(let i = 0; i < k; i++){
     }
     console.log(row)
 }
+
+// final revision
+// A B C D E
+// A B C D
+// A B C
+// A B
+// A
+
+let rows = 5
+for(let i = 0; i < rows; i++){
+    let numbers = ''
+    for(let j = 0; j < rows - i; j++){
+        let alphabet = String.fromCharCode(65 + j)
+        numbers += `${alphabet} `
+    }
+    console.log(numbers)
+}
