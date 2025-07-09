@@ -36,3 +36,22 @@ for(let i = 0; i < k; i++){
     }
     console.log(alphabet)
 }
+
+// final revision
+// E 
+// D E
+// C D E
+// B C D E
+// A B C D E
+
+let rows = 5
+
+for(let i = 0; i < rows; i++){
+    let strings = ''
+    let alphabetNumber = 65 + rows - i - 1
+    for(let j = 0; j < i + 1; j++){
+        strings += `${String.fromCharCode(alphabetNumber)} `
+        alphabetNumber++
+    }
+    console.log(strings)
+}
