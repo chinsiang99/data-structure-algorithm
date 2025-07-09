@@ -64,3 +64,40 @@ for(let i = 0; i < 2 * k - 1; i++){
 
     console.log(stars + space + space + stars)
 }
+
+
+// final revision
+// *        *
+// **      **
+// ***    ***
+// ****  ****
+// **********
+// ****  ****
+// ***    ***
+// **      **
+// *        *
+
+let rows = 5
+for(let i = 0; i < 2 * rows - 1; i++){
+    let stars = ''
+    let spaces = ''
+    if(i < rows){
+        for(let j = 0; j < i + 1; j++){
+            stars += '* '
+        }
+
+        for(let j = 0; j < rows - i - 1; j++){
+            spaces += '  '
+        }
+    }else{
+        for(let j = 0; j < 2 * rows - i - 1; j++){
+            stars += '* '
+        }
+
+        for(let j = 0; j < i - rows + 1; j++){
+            spaces += '  '
+        }
+    }
+
+    console.log(stars + spaces + spaces + stars)
+}
