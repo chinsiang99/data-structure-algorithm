@@ -66,3 +66,42 @@ for(let i = 0; i < 2 * k; i++){
 
     console.log(star + space + star)
 }
+
+
+// final revision
+// **********
+// ****  ****
+// ***    ***
+// **      **
+// *        *
+// *        *
+// **      **
+// ***    ***
+// ****  ****
+// **********
+
+let rows = 5
+for(let i = 0; i < rows; i++){
+    let stars = ''
+    for(let j = 0; j < rows - i; j++){
+        stars += '* '
+    }
+
+    let spaces = ''
+    for(let j = 0; j < 2 * i; j++){
+        spaces += '  '
+    }
+    console.log(stars + spaces + stars)
+}
+
+for(let i = 0; i < rows; i++){
+    let stars = ''
+    for(let j = 0; j < i + 1; j++){
+        stars += '* '
+    }
+    let spaces = ''
+    for(let j = 0; j < 2 * n - 2 * (i + 1); j++){
+        spaces += '  '
+    }
+    console.log(stars + spaces + stars)
+}
