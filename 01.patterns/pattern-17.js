@@ -76,3 +76,30 @@ for(let i = 0; i < k; i++){
 
     console.log(space + alphabet)
 }
+
+// final revision
+//    A
+//  A B A       
+//A B C B A
+
+let rows = 10
+for(let i = 0; i < rows; i ++){
+    let strings = ''
+    let spaces = ''
+
+    let initial = 65
+    for(let j = 0; j < 2 * i + 1; j++){
+        if(j >= i){
+            strings += `${String.fromCharCode(initial)} `
+            initial--
+        }else{
+            strings += `${String.fromCharCode(initial)} `
+            initial++
+        }
+    }
+
+    for(let j = 0; j < rows - i - 1; j++){
+        spaces += '  '
+    }
+    console.log(spaces + strings)
+}
