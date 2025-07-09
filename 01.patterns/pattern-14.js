@@ -35,3 +35,21 @@ for(let i = 0; i < k; i++){
     }
     console.log(row)
 }
+
+// final revision
+
+// A 
+// A B
+// A B C
+// A B C D
+// A B C D E
+
+let rows = 5
+for(let i = 0; i < rows; i++){
+    let string = ''
+    for(let j = 0; j < i + 1; j++){
+        let alphabet = String.fromCharCode(65 + j)
+        string += `${alphabet} `
+    }
+    console.log(string)
+}
