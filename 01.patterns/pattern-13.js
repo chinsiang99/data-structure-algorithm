@@ -44,3 +44,21 @@ for(let i = 0; i < k; i++){
 
     console.log(row)
 }
+
+// final revision
+// 1 
+// 2 3
+// 4 5 6
+// 7 8 9 10
+// 11 12 13 14 15
+
+let rows = 5
+let cumulativeNumbering = 1
+for(let i = 0; i < rows; i++){
+    let numbers = ''
+    for(let j = 0; j < i + 1; j++){
+        numbers += `${cumulativeNumbering} `
+        cumulativeNumbering++
+    }
+    console.log(numbers)
+}
