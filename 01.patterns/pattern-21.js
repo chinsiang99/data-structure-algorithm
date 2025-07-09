@@ -52,3 +52,29 @@ for(let i = 0; i < k; i++){
     }
     console.log(row)
 }
+
+
+// final revision
+// *****
+// *   *
+// *   *
+// *   *
+// *****
+
+let rows = 5
+for(let i = 0; i < rows; i++){
+    let spaces = ''
+    for(let j = 0; j < rows - 2; j++){
+        spaces += '  '
+    }
+    let stars = ''
+    if(i === 0 || i === rows - 1){
+        for(let j = 0; j < rows; j++){
+            stars += '* '
+        }
+        console.log(stars)
+    }else{
+        stars = '* '
+        console.log(stars + spaces + stars)
+    }
+}
