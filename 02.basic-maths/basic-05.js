@@ -84,3 +84,21 @@ for(let i = 2; i * i <= k; i++){
 console.log(divisors)
 
 // time complexity will be sqrt(n)
+
+// final revision
+
+// printing all divisors
+// meaning that for 36
+// we wil print out 1, 2, 3, 4, 6, 9, 12, 18, 36
+// which is 36 can be divisible by all the above without any remainder
+
+let number = 36
+let divisorsNumber = [1, number]
+let copy = number
+for(let i = 2; i * i <= number; i++){
+    if(i * i === number){
+        divisorsNumber.push(i)
+    }else if(number % i === 0){
+        divisorsNumber.push(i, number / i)
+    }
+}
