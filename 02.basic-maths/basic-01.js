@@ -50,3 +50,19 @@ console.log(count1)
 
 
 
+// final revision
+let number = 7789
+let countNumber = 0
+while(number > 0){
+    number = Math.floor(number / 10)
+    countNumber++
+}
+
+console.log(countNumber)
+
+// a better way is to use logarithmetic
+
+let number2 = 77890
+
+let countNumber2 = Math.floor(Math.log10(number2)) + 1
+console.log(countNumber2)
