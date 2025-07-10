@@ -47,3 +47,31 @@ function methodHi(input){
 methodHi(copy)
 methodHi(copy2)
 methodHi(copy3)
+
+// final revision
+// armstrong number problem
+// armstrong number is if you add individual number up with cube, then it will be the same number
+// example:
+// 371 = 3^3 + 7^3 + 1
+// 1634 != 1^3 + 6^3 + 3^3 + 4^3 (not an armstrong number)
+// 35 != 3^3 + 5^3 (not an armstrong number)
+
+let number1 = 371
+let number2 = 1634
+let number3 = 35
+
+function solution(number){
+    let copy = number
+    let result = 0
+    while(number > 0){
+        let remainder = number % 10
+        number = Math.floor(number / 10)
+        result = result + Math.pow(remainder, 3)
+    }
+
+    return result === copy
+}
+
+solution(number1)
+solution(number2)
+solution(number3)
