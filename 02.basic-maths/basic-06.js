@@ -66,3 +66,25 @@ console.log(prime(k))
 console.log(prime(k2))
 console.log(prime(k3))
 console.log(prime(k4))
+
+
+// final revision
+let number = 3
+let number2 = 6
+let number3 = 4
+let number4 = 11
+
+function primeNumber(number){
+    for(let i = 2; i * i <= number; i++){
+        if(number % i === 0){
+            return false
+        }
+    }
+
+    return true
+}
+
+console.log(primeNumber(number))
+console.log(primeNumber(number2))
+console.log(primeNumber(number3))
+console.log(primeNumber(number4))
