@@ -50,3 +50,16 @@ while(m > 0){
 }
 
 console.log(result)
+
+
+// final revision
+
+let number = 12345
+let resultNumber = 0
+while(number > 0){
+    let remainder = number % 10
+    number = Math.floor(number / 10)
+    resultNumber = resultNumber * 10 + remainder
+}
+
+console.log(resultNumber)
