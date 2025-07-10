@@ -35,3 +35,22 @@ while(copy > 0){
 }
 
 console.log(result === k)
+
+// final revision
+
+function methodPalindrome(number){
+    let copy = number
+    let reversed = 0
+    while(number > 0){
+        let remainder = number % 10
+        number = Math.floor(number / 10)
+        reversed = reversed * 10 + remainder 
+    }
+
+    return copy === reversed
+}
+
+console.log(methodPalindrome(n))
+console.log(methodPalindrome(n2))
+console.log(methodPalindrome(n3))
+console.log(methodPalindrome(n4))
