@@ -16,7 +16,7 @@ function method(a, b){
 console.log(method(a, b))
 
 // note that method has a time complexity of n
-
+ 
 function method2(a, b){
     let returnValue
     for(let i = Math.min(a, b); i >= 1; i--){
@@ -123,3 +123,42 @@ function gcd2(n, n2){
 }
 
 gcd2(k, k2)
+
+// final revision
+
+
+let number = 8
+let number2 = 16
+
+let minimum = Math.min(number, number2)
+let maximum = Math.max(number, number2)
+let gcdResult = 1
+for(let i = 1; i * i <= minimum; i++){
+    if(minimum % i === 0 && maximum % i === 0){
+        let secondNumber = minimum / i
+        gcdResult = Math.max(i , gcdResult)
+        if(maximum % secondNumber === 0){
+            gcdResult = Math.max(secondNumber, gcdResult)
+            break;
+        }
+    }
+}
+
+console.log(gcdResult, "revision")
+
+
+
+function bestSolution(a, b){
+    while(Math.max(a, b) % Math.min(a, b) !== 0){
+        let remainder = Math.max(a, b) % Math.min(a, b)
+        a = Math.min(a, b)
+        b = remainder
+    }
+
+    return Math.min(a, b)
+}
+
+console.log(bestSolution(8, 16))
+console.log(bestSolution(2, 4))
+console.log(bestSolution(12, 13))
+console.log(bestSolution(12, 24))
