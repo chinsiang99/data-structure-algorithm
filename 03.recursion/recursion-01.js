@@ -141,3 +141,92 @@ function function5(initial, n){
 }
 
 function5(1, k)
+
+
+// final revision
+
+// recursive basic problems
+// 1. printing name 5 times
+// 2. print from 1 to n
+// 3. print from n to 1
+// 4. print from 1 to n (but with backtrack)
+// 5. print from n to 1 (but with backtrack)
+let name = "chin siang"
+function solution1(name, times){
+    if(times === 0){
+        return
+    }
+    console.log(name)
+    solution1(name, times - 1)
+}
+
+// this solution has time complexity of O(n)
+// but this solution is having extra space complexity which is O(n)
+// note that space complexity is based on the stack space
+solution1(name, 5)
+
+console.log("linear starts now")
+
+for(let i = 0; i < 5; i++){
+    console.log(name)
+}
+
+// above solution is only having time complexity of O(n) and space complexity of O(1)
+
+
+function solution2(number, initial = 1){
+    if(initial > number){
+        return
+    }
+
+    console.log(initial)
+    solution2(number, initial + 1)
+}
+
+// note that time complexity and space complexity is O(n)
+solution2(2)
+solution2(5)
+
+console.log("next")
+
+function solution3(number){
+    if(number === 0){
+        return
+    }
+    console.log(number)
+    solution3(number - 1)
+}
+
+solution3(2)
+solution3(5)
+
+console.log("next")
+
+
+function solution4(number, initial = 0){
+    if(number === initial){
+        return
+    }
+
+    solution4(number - 1, initial)
+    console.log(number)
+}
+
+solution4(2)
+solution4(5)
+
+console.log("next")
+
+
+// n to 1
+function solution5(number, initial = 1){
+    if(initial > number){
+        return
+    }
+
+    solution5(number, initial + 1)
+    console.log(initial)
+}
+
+solution5(2, 1)
+solution5(5, 1)
