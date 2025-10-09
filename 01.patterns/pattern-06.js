@@ -64,3 +64,22 @@ for(let i = 0; i < rows; i++){
     }
     console.log(numbers)
 }
+
+// practise for a job application
+console.log("-----for job application-----")
+
+// 1 2 3 4 5
+// 1 2 3 4
+// 1 2 3
+// 1 2
+// 1
+
+let p = 5
+
+for(let i = 0; i < p; i++){
+    let row = ''
+    for(let j = 1; j <= p - i; j++){
+        row += `${j} `
+    }
+    console.log(row)
+}
