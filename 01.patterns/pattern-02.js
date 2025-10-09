@@ -42,3 +42,22 @@ for(let i = 0; i < rows; i++){
     }
     console.log(stars)
 }
+
+// practise for a job application
+console.log("-----for job application-----")
+
+// *
+// * *
+// * * *
+// * * * *
+// * * * * *
+
+let p = 5
+
+for(let i = 0; i < p; i++){
+    let stars = ''
+    for(let j = 0; j < i + 1; j++){
+        stars += '* '
+    }
+    console.log(stars)
+}
