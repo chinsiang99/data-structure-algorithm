@@ -61,3 +61,23 @@ for(let i = 0; i < rows; i++){
     }
     console.log(stars)
 }
+
+
+// practise for a job application
+console.log("-----for job application-----")
+
+// * * * * *
+// * * * *
+// * * *
+// * *
+// *
+
+let p = 5
+
+for(let i = 0; i < p; i++){
+    let row = ''
+    for(let j = 0; j < p - i; j++){
+        row += `* `
+    }
+    console.log(row)
+}
