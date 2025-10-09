@@ -48,3 +48,19 @@ for(let i = 0; i < star; i++){
 }
 
 
+// practise for a job application
+console.log("-----for job application-----")
+
+// * * * *
+// * * * *
+// * * * *
+// * * * *
+let p = 4
+
+for(let i = 0; i < p; i++){
+  let stars = ''
+  for(let i = 0; i < p; i++){
+    stars += '* '
+  }
+  console.log(stars)
+}
