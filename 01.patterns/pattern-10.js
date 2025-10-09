@@ -97,3 +97,35 @@ for(let i = 1; i <= 2 * rows - 1; i++){
     }
     console.log(stars)
 }
+
+// practise for a job application
+console.log("-----for job application-----")
+
+// *
+// * *
+// * * *
+// * * * *
+// * * * * *
+// * * * *
+// * * *
+// * *
+// *
+
+
+let p = 5
+
+for(let i = 0; i < 2 * p - 1; i++){
+
+    let stars = ''
+    if(i < p){
+        for(let j = 0; j < i + 1; j++){
+            stars += '* '
+        }
+    }else{
+        for(let j = 0; j < 2 * p - i - 1; j++){
+            stars += '* '
+        }
+    }
+ 
+    console.log(stars)
+}
