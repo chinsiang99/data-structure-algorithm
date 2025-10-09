@@ -76,3 +76,28 @@ for(let i = 0; i < rows; i++){
 
     console.log(space + stars + space)
 }
+
+
+// practise for a job application
+console.log("-----for job application-----")
+//         *
+//       * * *
+//     * * * * *
+//   * * * * * * *
+// * * * * * * * * *
+
+let p = 5
+for(let i = 1; i <= p; i++){
+
+    let space = ''
+    for(let j = 0; j < p - i; j++){
+        space += '  '
+    }
+
+    let stars = ''
+    for(let j = 0; j < 2 * i - 1; j++){
+        stars += '* '
+    }
+
+    console.log(space + stars)
+}
