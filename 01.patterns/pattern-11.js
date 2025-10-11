@@ -73,3 +73,27 @@ for(let i = 0; i < rows; i++){
 
     console.log(numbers)
 }
+
+// practise for a job application
+console.log("-----for job application-----")
+
+// 0 
+// 1 0
+// 0 1 0
+// 1 0 1 0
+// 0 1 0 1 0
+
+for(let i = 1; i <= 5; i++){
+    let start = 1
+    if(i % 2 === 1){
+        start = 0
+    }
+
+    let row = ''
+    for(let j = 0; j < i; j++){
+        row += `${start} `
+        start ^= 1
+    }
+
+    console.log(row)
+}
