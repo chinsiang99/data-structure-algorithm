@@ -89,3 +89,31 @@ for(let i = 1; i <= rows; i++){
 
     console.log(numbers + spaces + spaces + behindNumbers)
 }
+
+
+// practise for a job application
+console.log("-----for job application-----")
+
+// 1        1
+// 12      21
+// 123    321
+// 1234  4321
+// 1234554321
+
+let p = 4
+
+for(let i = 0; i < p; i++){
+    let first = ''
+    let second = ''
+    let space = ''
+
+    for(let j = 0; j < p - i - 1; j++){
+        space += '  '
+    }
+
+    for(let j = 0; j < i + 1; j++){
+        first += `${j + 1} `
+        second += `${i + 1 - j} `
+    }
+    console.log(first + space + space + second)
+}
