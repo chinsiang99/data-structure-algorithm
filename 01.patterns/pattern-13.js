@@ -62,3 +62,27 @@ for(let i = 0; i < rows; i++){
     }
     console.log(numbers)
 }
+
+
+
+// practise for a job application
+console.log("-----for job application-----")
+
+// 1 
+// 2 3
+// 4 5 6
+// 7 8 9 10
+// 11 12 13 14 15
+
+// n
+
+let p = 5
+
+for(let i = 1; i <= p; i++){
+    let start = i * (i - 1) / 2
+    let row = ''
+    for(let j = 1; j <= i; j++){
+        row += `${start + j} `
+    }
+    console.log(row)
+}
