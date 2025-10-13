@@ -48,3 +48,17 @@ for(let i = 0; i < rows; i++){
     }
     console.log(strings)
 }
+
+
+// practise for a job application
+console.log("-----for job application-----")
+
+let p = 5
+
+for(let i = 0; i < p; i++){
+    let row = ''
+    for(let j = 0; j < i + 1; j++){
+        row += `${String.fromCharCode(65 + i)} `
+    }
+    console.log(row)
+}
