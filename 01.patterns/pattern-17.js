@@ -103,3 +103,32 @@ for(let i = 0; i < rows; i ++){
     }
     console.log(spaces + strings)
 }
+
+// practise for a job application
+console.log("-----for job application-----")
+
+//    A
+//  A B A       
+//A B C B A
+
+let p = 10
+for(let i = 0; i < p; i++){
+
+    let space = ''
+    let row = ''
+    for(let j = 0; j < p - i - 1; j++){
+        space += '  '
+    }
+
+    let initial = 0
+    for(let j = 0; j < 2 * i + 1; j++){
+        if(j >= i){
+            row += `${String.fromCharCode(65 + initial)} `
+            initial--
+        }else{
+            row += `${String.fromCharCode(65 + initial)} `
+            initial++
+        }
+    }
+    console.log(space + row)
+}
