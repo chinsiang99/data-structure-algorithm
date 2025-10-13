@@ -50,3 +50,25 @@ for(let i = 0; i < rows; i++){
     }
     console.log(numbers)
 }
+
+
+
+// practise for a job application
+console.log("-----for job application-----")
+
+// A B C D E
+// A B C D
+// A B C
+// A B
+// A
+
+let p = 5
+
+for(let i = 0; i < p; i++){
+    let row = ''
+    for(let j = 0; j < p - i; j++){
+        row += `${String.fromCharCode(65 + j)} `
+    }
+    console.log(row)
+}
+
