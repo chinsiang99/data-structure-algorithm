@@ -55,3 +55,23 @@ for(let i = 0; i < rows; i++){
     }
     console.log(strings)
 }
+
+// practise for a job application
+console.log("-----for job application-----")
+
+// E 
+// D E
+// C D E
+// B C D E
+// A B C D E
+
+let p = 5
+
+for(let i = 0; i < p; i++){
+
+    let row = ''
+    for(let j = 0; j < i + 1; j++){
+        row += `${String.fromCharCode(65 + p - j - 1)} `
+    }
+    console.log(row)
+}
