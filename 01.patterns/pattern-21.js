@@ -78,3 +78,6 @@ for(let i = 0; i < rows; i++){
         console.log(stars + spaces + stars)
     }
 }
+
+// practise for a job application
+console.log("-----for job application-----")

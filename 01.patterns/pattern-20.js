@@ -101,3 +101,44 @@ for(let i = 0; i < 2 * rows - 1; i++){
 
     console.log(stars + spaces + spaces + stars)
 }
+
+// practise for a job application
+console.log("-----for job application-----")
+
+// *        *
+// **      **
+// ***    ***
+// ****  ****
+// ********** 4
+// ****  **** 5 1
+// ***    *** 6 2
+// **      ** 7 3
+// *        * 8 4
+
+let p = 5
+
+for(let i = 0; i < 2 * p - 1; i++){
+    
+    let space = ''
+    let row = ''
+
+    if(i < p){
+        for(let j = 0; j < i + 1; j++){
+            row += '*'
+        }
+
+        for(let j = 0; j < p - i - 1; j++){
+            space += ' '
+        }
+    }else{
+        for(let j = 0; j < 2 * p - i - 1; j++){
+            row += '*'
+        }
+
+        for(let j = 0; j < i - p + 1; j++){
+            space += ' '
+        }
+    }
+
+    console.log(row + space + space + row)
+}
