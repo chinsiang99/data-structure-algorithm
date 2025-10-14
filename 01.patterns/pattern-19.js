@@ -105,3 +105,49 @@ for(let i = 0; i < rows; i++){
     }
     console.log(stars + spaces + stars)
 }
+
+
+// practise for a job application
+console.log("-----for job application-----")
+
+// **********
+// ****  ****
+// ***    ***
+// **      **
+// *        *
+// *        *
+// **      **
+// ***    ***
+// ****  ****
+// **********
+
+let p = 5
+
+for(let i = 0; i < p; i++){
+
+    let space = ''
+    let row = ''
+
+    for(let j = 0; j < p - i; j++){
+        row += '*'
+    }
+
+    for(let j = 0; j < i; j++){
+        space += ' '
+    }
+    console.log(row + space + space + row)
+}
+
+for(let i = 0; i < p; i++){
+
+    let row = ''
+    let space = ''
+    for(let j = 0; j < i + 1; j++){
+        row += '*'
+    }
+
+    for(let j = 0; j < p - i - 1; j++){
+        space += ' '
+    }
+    console.log(row + space + space + row)
+}
