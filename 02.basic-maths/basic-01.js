@@ -66,3 +66,25 @@ let number2 = 77890
 
 let countNumber2 = Math.floor(Math.log10(number2)) + 1
 console.log(countNumber2)
+
+
+// practise for a job application
+console.log("-----for job application-----")
+
+// counting how many digits are there
+
+let p = 778912
+
+let counting = 0
+while(p > 0){
+    // p = p % 10 // this is to get the last digit
+    p = Math.floor(p / 10)
+    counting++
+}
+console.log(counting)
+
+counting = 0
+
+p = 778912
+
+console.log(Math.floor(Math.log10(p)) + 1) // this is a way to get it as well
