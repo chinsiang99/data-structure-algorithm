@@ -54,3 +54,35 @@ console.log(methodPalindrome(n))
 console.log(methodPalindrome(n2))
 console.log(methodPalindrome(n3))
 console.log(methodPalindrome(n4))
+
+
+// practise for a job application
+console.log("-----for job application-----")
+
+// palindrome problem
+// note that palindrome are the numbers for which reverse is exactly the same as the original number
+n = 1234
+n2 = 121
+n3 = 2222
+n4 = 992837
+
+function palin(n){
+    let reverse = 0
+    let copy = n
+    while(n > 0){
+        let remainder = n % 10
+        n = Math.floor(n / 10)
+        reverse = reverse * 10 + remainder
+    }
+
+    if(reverse === copy){
+        return true
+    }
+
+    return false
+}
+
+console.log(palin(n), n)
+console.log(palin(n2), n2)
+console.log(palin(n3), n3)
+console.log(palin(n4), n4)
