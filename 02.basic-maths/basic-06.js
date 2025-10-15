@@ -88,3 +88,31 @@ console.log(primeNumber(number))
 console.log(primeNumber(number2))
 console.log(primeNumber(number3))
 console.log(primeNumber(number4))
+
+
+
+// practise for a job application
+console.log("-----for job application-----")
+
+// prime numbers
+// prime number is a number that can only be divisible by itself and 1
+n = 3
+n2 = 6
+n3 = 4
+n4 = 11
+
+function prime(n){
+    let isPrime = true
+    for(let i = 2; i * i <= n; i++){
+        if(n % i === 0){
+            isPrime = false
+            break
+        }
+    }
+    return isPrime
+}
+
+console.log(prime(n), n)
+console.log(prime(n2), n2)
+console.log(prime(n3), n3)
+console.log(prime(n4), n4)
