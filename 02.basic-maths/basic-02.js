@@ -63,3 +63,20 @@ while(number > 0){
 }
 
 console.log(resultNumber)
+
+
+// practise for a job application
+console.log("-----for job application-----")
+// reverse a number
+
+let p = 8896
+let newNumber = 0
+while(p > 0){
+    let remainder = p % 10
+    p = Math.floor(p / 10)
+    newNumber = newNumber * 10 + remainder
+}
+
+console.log(newNumber)
+
+// note that if the tail of the number is consecutive zero, it will actually from 14010 to reverse 1041, the zero will be gone
