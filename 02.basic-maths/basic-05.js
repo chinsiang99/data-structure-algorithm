@@ -102,3 +102,30 @@ for(let i = 2; i * i <= number; i++){
         divisorsNumber.push(i, number / i)
     }
 }
+
+
+// practise for a job application
+console.log("-----for job application-----")
+
+// printing all divisors
+// meaning that for 36
+// we wil print out 1, 2, 3, 4, 6, 9, 12, 18, 36
+// which is 36 can be divisible by all the above without any remainder
+
+let p = 36
+let result = []
+for(let i = 1; i * i <= p; i++){
+    if(p % i === 0){
+        let number1 = i
+        let number2 = p / i
+        if(number1 === number2){
+            result.push(number1)
+        }else{
+            result.push(number1)
+            result.push(number2)
+        }
+    }
+    continue
+}
+console.log(result)
+// note that the time compelxity is actually O(sqrt(n))
