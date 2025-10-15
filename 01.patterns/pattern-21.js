@@ -81,3 +81,25 @@ for(let i = 0; i < rows; i++){
 
 // practise for a job application
 console.log("-----for job application-----")
+
+// *****
+// *   *
+// *   *
+// *   *
+// *****
+
+let p = 5
+
+for(let i = 0; i < p; i++){
+    let row = ''
+    if(i === 0 || i === p - 1){
+        for(let j = 0; j < p; j++){
+            row += '*'
+        }
+    }else{
+        for(let j = 0; j < p; j++){
+            row += j === 0 || j === p - 1 ? `*` : ` `
+        }
+    }
+    console.log(row)
+}
