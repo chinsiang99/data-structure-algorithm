@@ -75,3 +75,36 @@ function solution(number){
 solution(number1)
 solution(number2)
 solution(number3)
+
+
+// practise for a job application
+console.log("-----for job application-----")
+
+// armstrong number problem
+// armstrong number is if you add individual number up with cube, then it will be the same number
+// example:
+// 371 = 3^3 + 7^3 + 1
+// 1634 != 1^3 + 6^3 + 3^3 + 4^3 (not an armstrong number)
+// 35 != 3^3 + 5^3 (not an armstrong number)
+
+n = 371
+n1 = 1634 // 1 + 216 + 27 + 64
+n2 = 35
+
+function arm(n){
+    let result = 0
+    let copy = n
+    while(n > 0){
+        let remainder = n % 10
+        n = Math.floor(n / 10)
+        result = result + Math.pow(remainder, 3) 
+    }
+    if(copy === result){
+        return true
+    }
+    return false
+}
+
+console.log(arm(n), n)
+console.log(arm(n1), n1)
+console.log(arm(n2), n2)
