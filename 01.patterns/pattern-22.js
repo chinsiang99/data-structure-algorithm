@@ -87,3 +87,30 @@ for(let i = 0; i < 2 * rows - 1; i++){
     }
     console.log(numbers)
 }
+
+
+// practise for a job application
+console.log("-----for job application-----")
+
+// 4444444
+// 4333334
+// 4322234
+// 4321234
+// 4322234
+// 4333334
+// 4444444
+
+let p = 4
+
+for(let i = 0; i < 2 * p - 1; i++){
+    let row = ''
+    for(let j = 0; j < 2 * p - 1; j++){
+        let left = j
+        let right = 2 * p - 1 - j - 1
+        let top = i
+        let bottom = 2 * p - 1 - i - 1
+        let diff = Math.min(left, right, top, bottom)
+        row += `${p - diff}`
+    }
+    console.log(row)
+}
