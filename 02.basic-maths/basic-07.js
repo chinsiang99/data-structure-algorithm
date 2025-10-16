@@ -162,3 +162,57 @@ console.log(bestSolution(8, 16))
 console.log(bestSolution(2, 4))
 console.log(bestSolution(12, 13))
 console.log(bestSolution(12, 24))
+
+
+// practise for a job application
+console.log("-----for job application-----")
+// gcd (greatest common divisor) / hcf (highest common factor)
+
+a = 9
+b = 12
+
+let result = 1
+for(let i = 1; i * i <= a; i++){
+    if(a % i === 0 && b % i === 0){
+        let opposite = a / i
+        if(b % opposite === 0){
+            result = opposite
+            break
+        }
+        result = i
+    }
+}
+console.log(result)
+
+// there is another method to do it, so please do it later
+
+a = 9
+b = 12
+
+while(Math.min(a, b) !== 0){
+    let diff = Math.max(a, b) - Math.min(a, b)
+    if(a >= b){
+        a = diff
+    }else{
+        b = diff
+    }
+}
+
+console.log(Math.max(a, b))
+
+// this has actually higher complexity O(max(a, b))
+
+// below is the optimal way, which is using modular
+// why modular works tho?
+
+a = 9
+b = 12
+// please note that this is Euclid’s algorithm
+while(b !== 0){
+    let remainder = a % b
+    a = b
+    b = remainder
+}
+
+console.log(a)
+// this will have time complexity of O(log(min(a,b)))
