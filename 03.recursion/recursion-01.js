@@ -34,15 +34,15 @@ problem2(1, 5)
 
 // problem 3
 console.log("problem 3 start here ...")
-function problem3(i, n){
+function problem3_2(i, n){
     if(n < i){
         return
     }
     console.log(n)
-    return problem3(i, n-1)
+    return problem3_2(i, n-1)
 }
 
-problem3(2, 5)
+problem3_2(2, 5)
 
 // problem 4...
 console.log("problem 4 start here ...")
@@ -228,5 +228,93 @@ function solution5(number, initial = 1){
     console.log(initial)
 }
 
-solution5(2, 1)
-solution5(5, 1)
+// solution5(2, 1)
+// solution5(5, 1)
+
+
+// practise for a job application
+console.log("-----for job application-----")
+
+// recursive basic problems
+// 1. printing name 5 times
+// 2. print from 1 to n
+// 3. print from n to 1
+// 4. print from 1 to n (but with backtrack)
+// 5. print from n to 1 (but with backtrack)
+
+let p = 5
+
+function problem1(name, times, initial = 1){
+    if(initial > 5){
+        return
+    }
+    console.log(name)
+    problem1(name, times, initial + 1)
+}
+
+
+problem1("chinsiang", p)
+
+function problem1_2(name, times, initial = 1){
+    if(initial > 5){
+        return
+    }
+    problem1_2(name, times, initial + 1)
+    console.log(name)
+}
+
+problem1_2("chinsiang 2", p)
+
+function problem2(n, initial = 1){
+    if(initial > n){
+        return
+    }
+    console.log(initial)
+    problem2(n, initial + 1)
+}
+
+problem2(p)
+
+function problem3(n, initial = 1){
+    if(n < initial){
+        return
+    }
+    console.log(n)
+    problem3(n - 1, initial)
+}
+
+problem3(p)
+
+function problem3_2(n, initial = 1){
+    if(initial > n){
+        return
+    }
+    problem3_2(n, initial + 1)
+    console.log(initial)
+}
+
+problem3_2(p)
+
+// 4. print from 1 to n (but with backtrack)
+// 5. print from n to 1 (but with backtrack)
+
+function problem4(n, initial = 1){
+    if(n < initial){
+        return
+    }
+
+    problem4(n - 1, initial)
+    console.log(n)
+}
+
+problem4(p)
+
+function problem5(n, initial = 1){
+    if(initial > n){
+        return
+    }
+    problem5(n, initial + 1)
+    console.log(initial)
+}
+
+problem5(p)
