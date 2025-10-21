@@ -98,3 +98,8 @@ function functional2(n){
 }
 
 console.log(functional2(k))
+
+
+// practise for a job application
+console.log("-----for job application-----")
+// later do
