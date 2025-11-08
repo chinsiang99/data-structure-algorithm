@@ -13,3 +13,39 @@ function method(string, toBeSearch){
 }
 
 console.log(method(string, 'a'))
+
+// practise for a job application
+console.log("-----for job application-----")
+
+string = 'abcdefgabdgatqj'
+let search = 'a'
+
+let searchCount = 0
+for(let i = 0; i < string.length; i++){
+    if(string[i] === search){
+        searchCount++
+    }
+}
+
+console.log(searchCount)
+
+
+// another method here which is using two pointer approach
+let leftPointer = 0
+let rightPointer = string.length - 1
+searchCount = 0 
+
+while(leftPointer <= rightPointer){
+    if(leftPointer === rightPointer){
+        if(string[leftPointer] === search){
+            searchCount++
+        }
+    }else{
+        if (string[leftPointer] === search) searchCount++
+        if (string[rightPointer] === search) searchCount++
+    }
+    leftPointer++
+    rightPointer--
+}
+
+console.log(searchCount)
