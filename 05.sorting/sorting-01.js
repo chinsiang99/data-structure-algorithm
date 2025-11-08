@@ -68,3 +68,44 @@ function selectionSort(arr){
 }
 
 console.log(selectionSort(newArray))
+
+
+
+// practise for a job application
+console.log("-----for job application-----")
+
+// this is selection sort
+// basically pick the minimum and make it to the most front or most behind, and keep repeating it
+newArray = [1, 2, 6, 7, 3, 4, 5]
+for(let i = 0; i < newArray.length; i++){
+    let minimumIndex = i
+    for(let j = i + 1; j < newArray.length; j++){
+        if(newArray[j] < newArray[minimumIndex]){
+            minimumIndex = j
+        }
+    }
+
+    if(minimumIndex !== i){
+        newArray[i] = newArray[i] ^ newArray[minimumIndex]
+        newArray[minimumIndex] = newArray[i] ^ newArray[minimumIndex]
+        newArray[i] = newArray[i] ^ newArray[minimumIndex]
+    }
+
+}
+console.log(newArray, "this is ascending")
+
+newArray = [1, 2, 6, 7, 3, 4, 5]
+
+for(let i = 0; i < newArray.length; i++){
+    let maximumIndex = i
+    for(let j = i + 1; j < newArray.length; j++){
+        if(newArray[j] > newArray[maximumIndex]) maximumIndex = j
+    }
+    if(maximumIndex !== i){
+        newArray[i] = newArray[i] ^ newArray[maximumIndex]
+        newArray[maximumIndex] = newArray[i] ^ newArray[maximumIndex]
+        newArray[i] = newArray[i] ^ newArray[maximumIndex]
+    }
+}
+
+console.log(newArray, "this is descending")
