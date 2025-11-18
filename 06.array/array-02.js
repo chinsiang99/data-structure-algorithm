@@ -96,3 +96,70 @@ if(largest === secondLargest){
     console.log(-1)
 }
 console.log(largestValue, secondLargestValue)
+
+
+// practise for a job application
+console.log("-----for job application-----")
+
+// let max = Number.MIN_SAFE_INTEGER
+// console.log(max)
+
+arrayNumbers = [1, 2, 4, 5, 3, 2, 7, 8, 8, 7]
+
+// if(arrayNumbers.length < 2){
+//     return -1
+//     console.log(-1)
+// }else if(arrayNumbers.length === 2){
+//     let min = Math.min(arrayNumbers[0], arrayNumbers[1])
+
+//     if(min === Math.max(arrayNumbers[0], arrayNumbers[1])){
+//         return -1
+//         console.log(-1)
+//     }
+
+//     return min
+//     console.log(min)
+// }else{
+//     let leftPointer = 0
+//     let rightPointer = arrayNumbers.length - 1
+
+//     let max = Math.max(arrayNumbers[leftPointer], arrayNumbers[rightPointer])
+//     let min = Math.min(arrayNumbers[leftPointer], arrayNumbers[rightPointer])
+
+//     let isLargestSameAsSecondLargest = false
+
+//     if(max === min){
+//         isLargestSameAsSecondLargest = true
+//     }
+//     leftPointer++
+//     rightPointer--
+//     while(rightPointer >= leftPointer){
+//         let maxTemporary = Math.max(arrayNumbers[leftPointer], arrayNumbers[rightPointer])
+//         let minTemporary = Math.max(arrayNumbers[leftPointer], arrayNumbers[rightPointer])
+
+//         if(maxTemporary <= max){
+//             if(maxTemporary !== min){
+//                 min =
+//                 isLargestSameAsSecondLargest = !isLargestSameAsSecondLargest
+//             }
+//         }
+//     }
+// }
+
+// i want to find second largest
+let largestFound = 0
+let smallestFound = -1
+arrayNumbers = [1, 1, 1, 1]
+for(let i = 1; i < arrayNumbers.length; i++){
+    if(arrayNumbers[i] > arrayNumbers[largestFound]){
+        smallestFound = largestFound
+        largestFound = i
+    }else if (arrayNumbers[i] < arrayNumbers[largestFound]){
+        if (smallestFound === -1 || arrayNumbers[i] > arrayNumbers[smallestFound]){
+            smallestFound = i
+        }
+    }
+}
+
+console.log(arrayNumbers)
+console.log(arrayNumbers[largestFound], arrayNumbers[smallestFound])

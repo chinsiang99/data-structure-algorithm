@@ -53,3 +53,5 @@ while(rightPointers > leftPointers){
     leftPointers++
 }
 console.log(max)
+
+console.log(Number.MIN_SAFE_INTEGER)
