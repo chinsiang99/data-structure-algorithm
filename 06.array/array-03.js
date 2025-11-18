@@ -48,3 +48,28 @@ while(leftPointer <= rightPointer){
 }
 
 console.log(smallestValue, secondSmallestValue)
+
+// practise for a job application
+console.log("-----for job application-----")
+
+// find smallest second number
+
+let smallestFound = arrayNumbers[0]
+let secondSmallestFound = Number.MIN_SAFE_INTEGER
+
+for(let i = 1; i < arrayNumbers.length; i++){
+    if(arrayNumbers[i] < smallestFound){
+        secondSmallestFound = smallestFound
+        smallestFound = arrayNumbers[i]
+    }else if(secondSmallestFound === Number.MIN_SAFE_INTEGER && arrayNumbers[i] > smallestFound){
+        console.log(arrayNumbers[i], secondSmallestFound)
+        console.log("yo")
+        secondSmallestFound = arrayNumbers[i]
+    }else if(arrayNumbers[i] < secondSmallestFound){
+        secondSmallestFound = arrayNumbers[i]
+    }
+}
+
+console.log(Infinity)
+
+console.log(arrayNumbers, smallestFound, secondSmallestFound)
