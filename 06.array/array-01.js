@@ -38,3 +38,18 @@ while(leftPointer <= rightPointer){
 }
 
 console.log(largestValue)
+
+
+// practise for a job application
+console.log("-----for job application-----")
+arrayNumbers = [1, 3, 5, 7, 6, 10, 3, 4, 5]
+
+let max = arrayNumbers[0]
+let leftPointers = 1
+let rightPointers = arrayNumbers.length - 1
+while(rightPointers > leftPointers){
+    max = Math.max(max, arrayNumbers[leftPointers], arrayNumbers[rightPointers])
+    rightPointers--
+    leftPointers++
+}
+console.log(max)
