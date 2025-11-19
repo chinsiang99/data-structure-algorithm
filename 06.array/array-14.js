@@ -60,11 +60,12 @@ console.log(mapping(array, 3))
 
 console.log("--- revision starts here ---")
 
-array = [1, 2, 3, 1, 1, 1, 1, 4, 2, 3]
+
+array = [0, 1, -1, 2, 3, -2, 3, 0, 4];
 
 let mapped = new Map()
 let cumulativeNumber = 0
-let target = 1
+let target = 3
 let length = 0
 for(let i = 0; i < array.length; i++){
     cumulativeNumber += array[i]
@@ -85,3 +86,83 @@ for(let i = 0; i < array.length; i++){
 }
 
 console.log(length)
+
+
+// practise for a job application
+console.log("-----for job application-----")
+
+// try brute force solution whether i can get it right or not
+array = [1, 2, 3, 1, 1, 1, 1, 4, 2, 3] // should be 3
+array = [0, 1, -1, 2, 3, -2, 3, 0, 4]; // should be 6
+let k = 3
+let max = 0
+for(let i = 0; i < array.length; i++){
+    let currentMax = 0
+    let cumulative = 0
+    let maxIteration = 0
+    for(let j = i; j <array.length; j++){
+        cumulative = cumulative + array[j]
+        maxIteration++
+        if(cumulative === k){
+            currentMax = Math.max(currentMax, maxIteration)
+        }
+    }
+    max = Math.max(currentMax, max)
+}
+
+console.log(max)
+
+// so now i will try to do a better solution which actually make n^2 to n, but with extra spacing tho
+
+let map = new Map()
+let cumulative = 0
+let maxC = 0
+let lengthC = 0
+for(let i = 0; i < array.length; i++){
+    cumulative += array[i]
+
+    if(cumulative === k){
+        lengthC = i + 1
+    }
+
+    let diff = cumulative - k
+
+    if(map.has(diff)){
+        lengthC = Math.max(lengthC, i - map.get(diff))
+    }
+
+    if(!map.has(cumulativeNumber)){
+        map.set(cumulativeNumber, i)
+    }
+}
+
+console.log(lengthC)
+
+// now below we will try the two pointer approach
+// which is actually sliding window technique
+// which is sueful for sorted array tho, if it is not sorted array, then we actually need to use the map method
+let left = 0
+let sum = 0
+let maxL = 0
+array = [0, 1, -1, 2, 3, -2, 3, 0, 4]
+// array = [1, 2, 3, 1, 1, 1, 1, 4, 2, 3]
+// note that this only work when it is positives number only, otherwise it is not wotrking expectedly....
+for(let right = 0; right < array.length; right++){
+    sum = sum + array[right]
+    // console.log(sum, "hello iteration")
+    while(sum > k){
+        // console.log(sum, "sum greater than 3")
+        // console.log(sum, "this is sum?")
+        sum = sum - array[left]
+        left++
+    }
+
+    if(sum === k){
+        // console.log(sum, "hello")
+        // console.log(right, left)
+        maxL = Math.max(maxL, right - left + 1)
+    }
+
+}
+
+console.log(maxL)
