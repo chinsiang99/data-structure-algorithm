@@ -116,3 +116,27 @@ while(pointer1 < array1.length && pointer2 < array2.length){
 }
 
 console.log(newA)
+
+
+// practise for a job application
+console.log("-----for job application-----")
+
+let first = [1, 2, 2, 3, 3, 4, 5, 5, 6]
+let second = [2, 3, 3, 5, 6, 7]
+
+let index1 = 0
+let index2 = 0
+let newArr = []
+while (index1 < first.length && index2 < second.length){
+    if(first[index1] === second[index2]){
+        newArr.push(first[index1])
+        index1++
+        index2++
+    }else if(first[index1] < second[index2]){
+        index1++
+    }else{
+        index2++
+    }
+}
+
+console.log(newArr)
