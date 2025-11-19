@@ -136,3 +136,52 @@ let missingNumber = xor1 ^ xor2
 console.log(missingNumber)
 
 let sum = n * (n + 1) / 2 // please note that this is very important yo
+
+
+// practise for a job application
+console.log("-----for job application-----")
+
+let summation = n * (n + 1) / 2
+
+for(let i = 0; i < arrayRevision.length; i++){
+    summation = summation - arrayRevision[i]
+}
+console.log(summation)
+
+
+// now is the xor method
+// we do the normal way first
+// below is having n + m + array complexity and space complexity of additional one array
+let helperArray = new Array(n + 1).fill(0)
+for(let i = 0; i < arrayRevision.length; i++){
+    helperArray[arrayRevision[i]] = 1 
+}
+
+for(let i = 1; i <= n; i++){
+    if(helperArray[i] === 0){
+        console.log("missing: ", i)
+    }
+}
+
+// below is using the xor function
+let missing = 0
+for(let i = 0; i < arrayRevision.length; i++){
+    missing = missing ^ arrayRevision[i]
+}
+
+for(let i = 1; i <= n; i++){
+    missing = missing ^ i
+}
+
+console.log(missing, "missing")
+
+// below is a wayyyy better approach
+let finalMissing
+for(let i = 0; i < arrayRevision.length; i++){
+    finalMissing = finalMissing ^ arrayRevision[i]
+    finalMissing = finalMissing ^ (i+1)
+}
+
+finalMissing = finalMissing ^ n
+
+console.log(finalMissing, "yoyoyo hehe")
