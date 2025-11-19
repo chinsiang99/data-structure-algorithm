@@ -59,3 +59,34 @@ for(let i = pointer; i < array.length; i++){
 }
 
 console.log(array)
+
+
+
+// practise for a job application
+console.log("-----for job application-----")
+
+let numbers = [1, 2, 5, 0, 3, 4, 0, 0, 2, 1, 0]
+// numbers = [1, 2]
+// at first, we need to find where is the first x first
+console.log(numbers)
+let firstZero = -1
+for(let i = 0; i < numbers.length; i++){
+    if(numbers[i] === 0){
+        firstZero = i
+        break
+    }
+}
+
+if(firstZero === -1){
+    console.log("no zero")
+}
+
+for(let i = firstZero + 1; i < numbers.length; i++){
+    if(numbers[i] !== 0){
+        numbers[firstZero] = numbers[i]
+        numbers[i] = 0
+        firstZero++
+    }
+}
+
+console.log(numbers)
