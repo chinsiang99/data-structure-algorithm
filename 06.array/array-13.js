@@ -28,3 +28,11 @@ for(let i = 1; i < array.length; i++){
     xor = xor ^ array[i]
 }
 console.log(xor)
+
+
+
+// practise for a job application
+console.log("-----for job application-----")
+
+// we can use map to do it but we dont want it because its actually not that performant
+// instead we can use xor
