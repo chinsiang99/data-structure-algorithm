@@ -111,3 +111,44 @@ while(pointer2 < array2.length){
 }
 
 console.log(newUnionArray)
+
+
+// practise for a job application
+console.log("-----for job application-----")
+
+
+arr1 = [1, 2, 3, 4, 5]
+arr2 = [4, 5, 6, 7, 8, 9, 11, 12]
+
+
+let firstPointer = 0, secondPointer = 0
+let newUnion = []
+while(firstPointer < arr1.length && secondPointer < arr2.length){
+    if(arr1[firstPointer] <= arr2[secondPointer]){
+        if(newUnion.length === 0 || arr1[firstPointer] !== newUnion[newUnion.length - 1]){
+            newUnion.push(arr1[firstPointer])
+        }
+        firstPointer++
+    }else{
+        if(newUnion.length === 0 || arr2[secondPointer] !== newUnion[newUnion.length - 1]){
+            newUnion.push(arr2[secondPointer])
+        }
+        secondPointer++
+    }
+}
+
+while(firstPointer < arr1.length){
+    if(newUnion.length === 0 || arr1[firstPointer] !== newUnion[newUnion.length - 1]){
+            newUnion.push(arr1[firstPointer])
+    }
+    firstPointer++
+}
+
+while(secondPointer < arr2.length){
+    if(newUnion.length === 0 || arr2[secondPointer] !== newUnion[newUnion.length - 1]){
+            newUnion.push(arr2[secondPointer])
+    }
+    secondPointer++
+}
+
+console.log(newUnion)
