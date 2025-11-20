@@ -81,3 +81,20 @@ for(let i = array.length - 2; i >=0; i--){
 }
 
 console.log(answer2)
+
+
+
+// for job application revisioning
+
+console.log("------ job -----")
+array = [10, 22, 12, 3, 0, 6]
+let newArray = [array[array.length - 1]]
+let largestSoFar = [array[array.length - 1]]
+for(let i = array.length - 2; i >= 0; i--){
+    if(array[i] > largestSoFar){
+        newArray.push(array[i])
+        largestSoFar = array[i]
+    }
+}
+
+console.log(newArray)
