@@ -94,3 +94,58 @@ for(let num of newSet){
 }
 
 console.log(count)
+
+console.log("----- job -----")
+// find longest consecutive
+array = [102, 4, 100, 1, 101, 2, 3, 2, 1, 1, 103, 104, 105]
+
+// what in my first thought is sorting first
+array.sort((a, b) => a - b)
+console.log(array)
+
+let minimum = Number.MIN_SAFE_INTEGER 
+let countings = 0
+let ans = 0
+for(let i = 0; i < array.length; i++){
+    if(array[i] === minimum + 1){
+        countings++
+        minimum = array[i]
+    }else{
+        countings = 1
+        minimum = array[i]
+    }
+
+    ans = Math.max(countings, ans)
+}
+
+
+console.log(ans)
+
+// below lets do a better one without sorting
+array = [102, 4, 100, 1, 101, 2, 3, 2, 1, 1, 103, 104, 105]
+let set = new Set(array)
+// for(let i = 0; i < array.length; i++){
+//     set.add(array[i])
+// }
+
+console.log(set)
+
+let max = 0
+
+for(let i = 0; i < array.length; i++){
+    let currentCount = 1
+    let value = array[i]
+    if(set.has(value - 1)){
+        max = Math.max(max, currentCount)
+        continue
+    }
+
+    while(set.has(value + 1)){
+        currentCount++
+        value++
+    }
+    max = Math.max(max, currentCount)
+}
+
+// time complexity is 3N and it is n
+console.log(max)
