@@ -218,3 +218,144 @@ for(let i = 0; i < matrix.length; i++){
 }
 
 console.log(matrix)
+
+
+console.log("------ job -----")
+
+matrix = [
+    [1, 1, 1, 1],
+    [1, 0, 0, 1],
+    [1, 1, 0, 1],
+    [1, 1, 1, 1]
+]
+
+let size = matrix.length
+
+for(let i = 0; i < matrix.length; i++){
+
+    for(let j = 0; j < matrix[i].length; j++){
+        if(matrix[i][j] === 0){
+            // mark row and column to be -1, which a flag first
+            // note that except 0
+            markColumn(j)
+            markRow(j)
+        }
+    }
+}
+
+for(let i = 0; i < matrix.length; i++){
+
+    for(let j = 0; j < matrix[i].length; j++){
+        if(matrix[i][j] === -1){
+            matrix[i][j] = 0
+        }
+    }
+}
+
+function markColumn(x){
+    for(let i = 0; i < size; i++){
+        if(matrix[i][x] !== 0){
+            matrix[i][x] = -1
+        }
+    }
+}
+
+function markRow(y){
+    for(let i = 0; i < size; i++){
+        if(matrix[y][i] !== 0){
+            matrix[y][i] = -1
+        }
+    }
+}
+
+console.log(matrix)
+    
+// here we will perform a better solution tho
+
+// which is actually utilizing
+
+
+matrix = [
+    [1, 1, 1, 1],
+    [1, 0, 0, 1],
+    [1, 1, 0, 1],
+    [1, 1, 1, 1]
+]
+
+size = matrix.length
+
+let columnSet = new Set()
+let rowSet = new Set()
+
+for(let i = 0; i < matrix.length; i++){
+
+    for(let j = 0; j < matrix[i].length; j++){
+        if(matrix[i][j] === 0){
+            columnSet.add(j)
+            rowSet.add(i)
+        }
+    }
+}
+
+
+for(let i = 0; i < matrix.length; i++){
+
+    for(let j = 0; j < matrix[i].length; j++){
+        if(rowSet.has(i)){
+            matrix[i][j] = 0
+        }else if(columnSet.has(j)){
+            matrix[i][j] = 0
+        }
+    }
+}
+
+console.log(matrix)
+
+// below is the optimal solution
+matrix = [
+    [1, 1, 1, 1],
+    [1, 0, 0, 1],
+    [1, 1, 0, 1],
+    [1, 1, 1, 1]
+]
+let col0 = matrix[0][0]
+
+for(let i = 0; i < matrix.length; i++){
+
+    for(let j = 0; j < matrix[i].length; j++){
+        if(matrix[i][j] === 0){
+            matrix[i][0] = 0
+
+            if(j !== 0){
+                matrix[0][j] = 0
+            }else{
+                col0 = 0
+            }
+        }
+    }
+}
+
+// now we will validate inside matrix
+
+for(let i = 1; i < matrix.length; i++){
+
+    for(let j = 1; j < matrix[i].length; j++){
+        if(matrix[i][0] === 0 || matrix [0][j] === 0){
+            matrix[i][j] = 0
+        }
+    }
+}
+
+if(matrix[0][0] === 0){
+    for(let i = 0; i < matrix[0].length; i++){
+        matrix[0][i] = 0
+    }
+}
+
+if(col0 === 0){
+    for(let i = 0; i < matrix.length; i++){
+        matrix[i][0] = 0
+    }
+}
+
+console.log(matrix)
