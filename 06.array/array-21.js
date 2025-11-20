@@ -101,3 +101,51 @@ if(breakPoint === -1){
 }
 
 console.log(array2)
+
+// hello this is for job application
+console.log("--------- job -------")
+
+array = [2, 1, 5, 4, 3, 0, 0]
+
+// first we need to check where is the breakpoint
+let breakPoints = -1
+
+for(let i = array.length - 2; i >= 0; i--){
+    // console.log(i, "this is i")
+    if(array[i] < array[i + 1]){
+        breakPoints = i + 1
+        break
+    }
+}
+
+let leftPointer = 0
+let rightPointer = array.length - 1
+if(breakPoints === -1){
+    while(leftPointer < rightPointer){
+        [array[leftPointer], array[rightPointer]] = [array[rightPointer], array[leftPointer]]
+        leftPointer++
+        rightPointer--
+    }
+    console.log(array)
+}else{
+    for(let i = array.length - 1; i >= breakPoints; i--){
+        if(array[breakPoints - 1] < array[i]){
+            array[breakPoints - 1] = array[breakPoints - 1] ^ array[i]
+            array[i] = array[breakPoints - 1] ^ array[i]
+            array[breakPoints - 1] = array[breakPoints - 1] ^ array[i]
+            break
+        }
+    }
+
+    leftPointer = breakPoints
+    while(leftPointer < rightPointer){
+        [array[leftPointer], array[rightPointer]] = [array[rightPointer], array[leftPointer]]
+        leftPointer++
+        rightPointer--
+    }
+
+    console.log(array)
+}
+
+console.log(breakPoints)
+
