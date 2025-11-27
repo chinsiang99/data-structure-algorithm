@@ -188,3 +188,48 @@ function mergingStep(arr, low, mid, high){
 mergeSortRevision(arrayNumbers, 0, arrayNumbers.length - 1)
 
 console.log(arrayNumbers)
+
+// this is the final revision of merge sort for job application man
+arrayNumbers = [1, 3, 2, 5, 7, 2, 1]
+function mergeSortFinal(arr, low, high){
+    if(low === high) return
+    let mid = Math.floor((low+high) / 2)
+    mergeSortFinal(arr, low, mid)
+    mergeSortFinal(arr, mid+1, high)
+    merge(arr, low, mid, high)
+}
+
+
+mergeSortFinal(arrayNumbers, 0, arrayNumbers.length - 1)
+
+function merge(arr, low, mid, high){
+    let temp = []
+    let leftPointer = low
+    let rightPointer = mid+1
+
+    while(leftPointer <= mid && rightPointer <= high){
+        if(arr[leftPointer] <= arr[rightPointer]){
+            temp.push(arr[leftPointer])
+            leftPointer++
+        }else{
+            temp.push(arr[rightPointer])
+            rightPointer++
+        }
+    }
+
+    while(leftPointer <= mid){
+        temp.push(arr[leftPointer])
+        leftPointer++
+    }
+
+    while(rightPointer <= high){
+        temp.push(arr[rightPointer])
+        rightPointer++
+    }
+
+    for(let i = low; i <= high; i++){
+        arr[i] = temp[i - low]
+    }
+}
+
+console.log(arrayNumbers, "yo")
