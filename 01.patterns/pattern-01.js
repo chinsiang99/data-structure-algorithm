@@ -64,3 +64,23 @@ for(let i = 0; i < p; i++){
   }
   console.log(stars)
 }
+
+
+
+
+// ------------------ revision with js and go -------------------------
+
+
+// * * * *
+// * * * *
+// * * * *
+// * * * *
+console.log("------------------ revision with js and go -------------------------")
+let row = 4
+for(let i = 0; i < row; i++){
+  let stars = ''
+  for(let i = 0; i < row; i++){
+    stars += '* '
+  }
+  console.log(stars)
+}
