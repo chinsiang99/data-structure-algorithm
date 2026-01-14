@@ -79,3 +79,21 @@ for(let i = 0; i < p; i++){
     console.log(row)
 }
 
+// ------------------ revision with js and go -------------------------
+
+console.log("------------------ revision with js and go -------------------------")
+
+// 1
+// 1 2
+// 1 2 3
+// 1 2 3 4
+// 1 2 3 4 5
+
+let row = 5
+for(let i = 0; i < row; i++){
+    let resultLine = ''
+    for(let j = 0; j < i + 1; j ++){
+        resultLine += `${j + 1} `
+    }
+    console.log(resultLine)
+}
