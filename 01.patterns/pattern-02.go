@@ -24,6 +24,7 @@ func main() {
 
 	for i := 0; i < p; i++ {
 		var b strings.Builder
+		b.Grow(2 * (i + 1))
 		for j := 0; j < i+1; j++ {
 			b.WriteString("* ")
 		}
