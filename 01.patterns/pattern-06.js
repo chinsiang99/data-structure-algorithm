@@ -83,3 +83,23 @@ for(let i = 0; i < p; i++){
     }
     console.log(row)
 }
+
+// ------------------ revision with js and go -------------------------
+
+console.log("------------------ revision with js and go -------------------------")
+
+// 1 2 3 4 5
+// 1 2 3 4
+// 1 2 3
+// 1 2
+// 1
+
+let row = 5
+
+for(let i = 0; i < row; i++){
+    let char = ''
+    for(let j = 0; j < row - i; j++){
+        char += `${j + 1} `
+    }
+    console.log(char)
+}
