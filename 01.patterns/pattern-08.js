@@ -103,3 +103,37 @@ for(let i = 0; i < p; i++){
     console.log(space + stars + space)
 }
 
+
+
+// ------------------ revision with js and go -------------------------
+
+console.log("------------------ revision with js and go -------------------------")
+
+// * * * * * * * * * 
+//   * * * * * * *
+//     * * * * *
+//       * * *
+//         *
+
+// 0 9 0
+// 1 7 1
+// 2 5 2
+// 3 3 3
+// 4 1 4
+
+let row = 5
+
+for(let i = 0; i < row; i++){
+
+    let space = ''
+    for(let j = 0; j < i; j++){
+        space += '  '
+    }
+
+    let star = ''
+    for(let j = 0; j < 2 * row - (2 * i + 1); j++){
+        star += '* '
+    }
+    console.log(space + star)
+}
+
