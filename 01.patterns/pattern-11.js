@@ -97,3 +97,28 @@ for(let i = 1; i <= 5; i++){
 
     console.log(row)
 }
+
+// ------------------ revision with js and go -------------------------
+
+console.log("------------------ revision with js and go -------------------------")
+
+// 0 
+// 1 0
+// 0 1 0
+// 1 0 1 0
+// 0 1 0 1 0
+
+let row = 5
+
+for(let i = 1; i <= row; i++){
+    let start = 0
+    if(i % 2 === 0){
+        start = 1
+    }
+    let resultLine = ''
+    for(let j = 0; j < i; j++){
+        resultLine += `${start} `
+        start = start ^ 1
+    }
+    console.log(resultLine)
+}
