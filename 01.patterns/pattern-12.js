@@ -117,3 +117,36 @@ for(let i = 0; i < p; i++){
     }
     console.log(first + space + space + second)
 }
+
+// ------------------ revision with js and go -------------------------
+
+console.log("------------------ revision with js and go -------------------------")
+
+// 1        1
+// 12      21
+// 123    321
+// 1234  4321
+// 1234554321
+
+let row = 5
+
+for(let i = 1; i <= row; i++){
+    let first = ''
+    let space = ''
+    let second = ''
+
+
+    for(let j = 0; j < row - i; j++){
+        space += '  '
+    }
+
+    for(let j = 0; j < i; j++){
+        first += `${j + 1}`
+    }
+
+    for(let j = i; j > 0; j--){
+        second += `${j}`
+    }
+
+    console.log(first + space + second)
+}
