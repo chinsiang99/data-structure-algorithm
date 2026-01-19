@@ -76,3 +76,26 @@ for(let i = 0; i < p; i++){
     }
     console.log(row)
 }
+
+// ------------------ revision with js and go -------------------------
+
+console.log("------------------ revision with js and go -------------------------")
+
+// A 
+// A B
+// A B C
+// A B C D
+// A B C D E
+
+// console.log(String.)
+
+let row = 5
+console.log(String.fromCharCode(65))
+
+for(let i = 0; i < row; i++){
+    let line = ''
+    for(let j = 0; j < i + 1; j++){
+        line += `${String.fromCharCode(65 + j)} `
+    }
+    console.log(line)
+}
