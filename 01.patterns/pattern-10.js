@@ -129,3 +129,39 @@ for(let i = 0; i < 2 * p - 1; i++){
  
     console.log(stars)
 }
+
+
+// ------------------ revision with js and go -------------------------
+
+console.log("------------------ revision with js and go -------------------------")
+
+// *
+// * *
+// * * *
+// * * * *
+// * * * * *
+// * * * *
+// * * *
+// * *
+// *
+
+// 0 1
+// 1 2
+// 2 3
+// 3 4
+// 4 5
+// 5 4 - 2 * 5 - i - 1
+// 6 3 - 2 * 5 - i - 1
+// 7 2
+// 8 1
+// 9 0
+
+let row = 5
+
+for(let i = 0; i < 2 * row - 1; i++){
+    let stars = ''
+    for(let j = 0; i < 5 ? j < i + 1 : j < 2 * row - i - 1; j++){
+        stars += '* '
+    }    
+    console.log(stars)
+}
