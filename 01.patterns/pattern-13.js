@@ -86,3 +86,25 @@ for(let i = 1; i <= p; i++){
     }
     console.log(row)
 }
+
+
+// ------------------ revision with js and go -------------------------
+
+console.log("------------------ revision with js and go -------------------------")
+
+// 1 
+// 2 3
+// 4 5 6
+// 7 8 9 10
+// 11 12 13 14 15
+
+let row = 5
+let starting = 0
+for(let i = 0; i < row; i++){
+    result = ''
+    for(let j = 0; j < i + 1; j++){
+        starting = starting + 1
+        result += `${starting} `
+    }
+    console.log(result)
+}
