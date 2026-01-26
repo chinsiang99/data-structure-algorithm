@@ -132,3 +132,34 @@ for(let i = 0; i < p; i++){
     }
     console.log(space + row)
 }
+
+
+// ------------------ revision with js and go -------------------------
+
+console.log("------------------ revision with js and go -------------------------")
+
+//    A
+//  A B A       
+//A B C B A
+
+let row = 5
+
+for(let i = 1; i <= row; i++){
+    let space = ''
+    for(let j = 0; j < row - i; j++) {
+        space += '  '
+    }
+    let char = ''
+    let initial = 0
+    for(let j = 0; j < 2 * i - 1; j++){
+        if(j < i - 1){
+            char += `${String.fromCharCode(65 + initial)} `
+            initial++
+        }else{
+            char += `${String.fromCharCode(65 + initial)} `
+            initial--
+        }
+    }
+
+    console.log(space + char)
+}
