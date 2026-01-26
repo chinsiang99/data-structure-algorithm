@@ -62,3 +62,25 @@ for(let i = 0; i < p; i++){
     }
     console.log(row)
 }
+
+
+
+// ------------------ revision with js and go -------------------------
+
+console.log("------------------ revision with js and go -------------------------")
+
+
+// A 
+// B B
+// C C C
+// D D D D
+// E E E E E
+let row = 5
+
+for(let i = 0; i < row; i++){
+    let output = ''
+    for(let j = 0; j < i + 1; j++){
+        output += `${String.fromCharCode(65 + i)} `
+    }
+    console.log(output)
+}
