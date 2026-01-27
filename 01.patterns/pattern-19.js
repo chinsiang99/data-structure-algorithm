@@ -151,3 +151,44 @@ for(let i = 0; i < p; i++){
     }
     console.log(row + space + space + row)
 }
+
+
+
+// ------------------ revision with js and go -------------------------
+
+console.log("------------------ revision with js and go -------------------------")
+
+// **********
+// ****  ****
+// ***    ***
+// **      **
+// *        *
+// *        *
+// **      **
+// ***    ***
+// ****  ****
+// **********
+let row = 5
+for(let i = 0; i < row; i++){
+    let star = ''
+    for(let j = 0; j < row - i; j++){
+        star += '*'
+    }
+    let space = ''
+    for(let j = 0; j < i; j++){
+        space += ' '
+    }
+    console.log(star + space + space + star)
+}
+
+for(let i = 0; i < row; i++){
+    let star = ''
+    for(let j = 0; j < i + 1; j++){
+        star += '*'
+    }
+    let space = ''
+    for(let j = 0; j < row - i - 1; j++){
+        space += ' '
+    }
+    console.log(star + space + space + star)
+}
