@@ -86,3 +86,32 @@ console.log(palin(n), n)
 console.log(palin(n2), n2)
 console.log(palin(n3), n3)
 console.log(palin(n4), n4)
+
+
+
+// ------------------ revision with js and go -------------------------
+
+console.log("------------------ revision with js and go -------------------------")
+// palindrome problem
+// note that palindrome are the numbers for which reverse is exactly the same as the original number
+n = 1234
+n2 = 121
+n3 = 2222
+n4 = 992837
+
+function isPalin(number){
+    let copy = number
+    let result = 0
+    let remainder = 0
+    while(copy > 0){
+        remainder = copy % 10
+        copy = Math.floor(copy / 10)
+        result = result * 10 + remainder
+    }
+    return result === number
+}
+
+console.log(isPalin(n))
+console.log(isPalin(n2))
+console.log(isPalin(n3))
+console.log(isPalin(n4))
