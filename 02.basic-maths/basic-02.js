@@ -80,3 +80,19 @@ while(p > 0){
 console.log(newNumber)
 
 // note that if the tail of the number is consecutive zero, it will actually from 14010 to reverse 1041, the zero will be gone
+
+
+// ------------------ revision with js and go -------------------------
+
+console.log("------------------ revision with js and go -------------------------")
+
+// reverse a number
+n = 88967
+let finalResult = 0
+while(n > 0){
+    let remainder = n % 10
+    finalResult = finalResult * 10 + remainder
+    n = Math.floor(n / 10)
+}
+
+console.log(finalResult)
