@@ -88,3 +88,28 @@ counting = 0
 p = 778912
 
 console.log(Math.floor(Math.log10(p)) + 1) // this is a way to get it as well
+
+
+
+// ------------------ revision with js and go -------------------------
+
+console.log("------------------ revision with js and go -------------------------")
+
+// counting how many digits are there
+
+let num = 7789
+
+count = 0
+while(num > 0){
+    num = Math.floor(num / 10)
+    count++
+}
+console.log(count)
+
+// below is another way to do it....
+
+num = 7789
+
+count = Math.floor(Math.log10(num)) + 1
+
+console.log(count)
