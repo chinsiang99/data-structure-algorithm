@@ -103,3 +103,35 @@ for(let i = 0; i < p; i++){
     }
     console.log(row)
 }
+
+
+// ------------------ revision with js and go -------------------------
+
+console.log("------------------ revision with js and go -------------------------")
+
+
+// *****
+// *   *
+// *   *
+// *   *
+// *****
+
+let row = 5
+
+for(let i = 0; i < row; i ++){
+    let char = ''
+    let space = ''
+    for(let j = 0; j < row - 2; j++){
+        space += ' '
+    }
+    if(i === 0 || i === row - 1){
+        for(let j = 0; j < row; j++){
+            char += '*'
+        }
+        console.log(char)
+        continue
+    }
+
+    char += '*'
+    console.log(char + space + char)
+}
