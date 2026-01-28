@@ -108,3 +108,35 @@ function arm(n){
 console.log(arm(n), n)
 console.log(arm(n1), n1)
 console.log(arm(n2), n2)
+
+
+// ------------------ revision with js and go -------------------------
+
+console.log("------------------ revision with js and go -------------------------")
+
+// armstrong number problem
+// armstrong number is if you add individual number up with cube, then it will be the same number
+// example:
+// 371 = 3^3 + 7^3 + 1
+// 1634 != 1^3 + 6^3 + 3^3 + 4^3 (not an armstrong number)
+// 35 != 3^3 + 5^3 (not an armstrong number)
+
+n = 371
+n1 = 1634 // 1 + 216 + 27 + 64
+n2 = 35
+
+function armstrong(number){
+    let copy = number
+    let remainder = 0
+    let result = 0
+    while(copy > 0){
+        remainder = copy % 10
+        result = result + Math.pow(remainder, 3)
+        copy = Math.floor(copy / 10)
+    }
+    return result === number
+}
+
+console.log(armstrong(n))
+console.log(armstrong(n1))
+console.log(armstrong(n2))
