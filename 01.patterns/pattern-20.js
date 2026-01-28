@@ -142,3 +142,46 @@ for(let i = 0; i < 2 * p - 1; i++){
 
     console.log(row + space + space + row)
 }
+
+
+// ------------------ revision with js and go -------------------------
+
+console.log("------------------ revision with js and go -------------------------")
+
+// *        *
+// **      **
+// ***    ***
+// ****  ****
+// ********** 4
+// ****  **** 5 1
+// ***    *** 6 2
+// **      ** 7 3
+// *        * 8 4
+
+
+let row = 5
+
+for(let i = 0; i < 2 * row - 1; i++){
+    let char = ''
+    let space = ''
+    if (i < row){
+        let starCount = i + 1
+        let spaceCount = row - starCount
+        for(let i = 0; i < starCount; i++){
+            char += '*'
+        }
+        for(let i = 0; i < spaceCount; i++){
+            space += ' '
+        }
+    }else{
+        let spaceCount = i - row + 1
+        let starCount = row - spaceCount
+        for(let i = 0; i < starCount; i++){
+            char += '*'
+        }
+        for(let i = 0; i < spaceCount; i++){
+            space += ' '
+        }  
+    }
+    console.log(char + space + space + char)
+}
