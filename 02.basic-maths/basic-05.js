@@ -129,3 +129,29 @@ for(let i = 1; i * i <= p; i++){
 }
 console.log(result)
 // note that the time compelxity is actually O(sqrt(n))
+
+
+
+// ------------------ revision with js and go -------------------------
+
+console.log("------------------ revision with js and go -------------------------")
+
+// printing all divisors
+// meaning that for 36
+// we wil print out 1, 2, 3, 4, 6, 9, 12, 18, 36
+// which is 36 can be divisible by all the above without any remainder
+
+p = 36
+result = []
+for(let i = 1; i * i <= p; i++){
+    let remainder = p % i
+    if(remainder !== 0){
+        continue
+    }
+    result.push(i)
+    if(p / i !== i){
+        result.push(p / i)
+    }
+}
+
+console.log(result)
