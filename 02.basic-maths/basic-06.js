@@ -116,3 +116,30 @@ console.log(prime(n), n)
 console.log(prime(n2), n2)
 console.log(prime(n3), n3)
 console.log(prime(n4), n4)
+
+
+
+// ------------------ revision with js and go -------------------------
+
+console.log("------------------ revision with js and go -------------------------")
+
+// prime numbers
+// prime number is a number that can only be divisible by itself and 1
+n = 3
+n2 = 6
+n3 = 4
+n4 = 11
+
+function isPrime(number){
+    for(let i = 2; i * i <= number; i++){
+        if(number % i === 0){
+            return false
+        }
+    }
+    return true
+}
+
+console.log(isPrime(n))
+console.log(isPrime(n2))
+console.log(isPrime(n3))
+console.log(isPrime(n4))
