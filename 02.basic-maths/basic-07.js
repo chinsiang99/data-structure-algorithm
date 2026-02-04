@@ -216,3 +216,33 @@ while(b !== 0){
 
 console.log(a)
 // this will have time complexity of O(log(min(a,b)))
+
+
+
+// ------------------ revision with js and go -------------------------
+
+console.log("------------------ revision with js and go -------------------------")
+
+
+// gcd (greatest common divisor) / hcf (highest common factor)
+
+
+
+a = 9
+b = 12
+
+let temp = 1
+for(let i = 1; i <= Math.min(a, b); i++){
+    if(a % i === 0 && b % i === 0){
+        temp = i
+    }
+}
+
+console.log(temp)
+
+for(let i = Math.min(a,b); i >= 1; i--){
+    if(a % i === 0 && b % i === 0){
+        console.log(i)
+        break;
+    }
+}
