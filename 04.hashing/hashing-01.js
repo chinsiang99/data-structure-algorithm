@@ -86,3 +86,23 @@ while(leftPointer <= rightPointer){
 }
 
 console.log(mapping)
+
+
+
+// ------------------ revision with js and go -------------------------
+
+console.log("------------------ revision with js and go -------------------------")
+
+// problem 1 - count elements of an array
+
+arr = [1, 2, 3, 4, 5, 1, 2, 3]
+let mappingNumber = new Map()
+for(let i = 0; i < arr.length; i++){
+    if(!mappingNumber.has(arr[i])){
+        mappingNumber.set(arr[i], 1)
+    }else{
+        mappingNumber.set(arr[i], mappingNumber.get(arr[i]) + 1)
+    }
+}
+
+console.log(mappingNumber, "yo")
