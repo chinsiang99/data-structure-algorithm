@@ -26,6 +26,8 @@ func main() {
 }
 
 func longestSubstringWithoutRepeatingCharacters(word string) int {
+	// this is ok to be using byte if we assume it is actually for ascii only, but if it  include unicode such as emoji,
+	// it will eventually break, and we should use for range instead, because it will give us rune
 	mapping := make(map[byte]int)
 	left := 0
 	longest := 0
